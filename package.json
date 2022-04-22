@@ -4,7 +4,7 @@
   "description": "Core SCSS UI Kit",
   "main": "scss/main.scss",
   "scripts": {
-    "publish": "npm publish --access public"
+    "publish-package": "npm publish --access public"
   },
   "repository": {
     "type": "git",
