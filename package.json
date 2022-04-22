@@ -1,0 +1,25 @@
+{
+  "name": "@patter/patter-core-styles",
+  "version": "1.0.1",
+  "description": "Core SCSS UI Kit",
+  "main": "scss/main.scss",
+  "scripts": {
+    "publish": "npm publish --access public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dreem-Media/patter-core-styles.git"
+  },
+  "author": "Alex Whitlock <alex@patter.co.uk> (https://patter.co.uk/)",
+  "contributors": [
+    "Alex Whitlock <zanderwhitlock@gmail.com>"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dreem-Media/patter-core-styles/issues"
+  },
+  "homepage": "https://github.com/Dreem-Media/patter-core-styles#readme",
+  "keywords": [
+    "scss"
+  ]
+}
