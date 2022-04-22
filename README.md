@@ -1,0 +1,1 @@
+# patter-core-styles
