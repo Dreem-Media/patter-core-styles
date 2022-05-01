@@ -1,3 +1,131 @@
+@use "../abstracts"as *;
+
 //============
 // Grid
 //============
+
+// FLEX COLUMNS 
+// Wrap with flex-and-wrap-justify
+
+.full_width {
+  flex-basis: 100%;
+}
+
+@include media(">=phone") {
+
+  // Mod 2/4
+  .one_half {
+    flex-basis: 48%;
+
+    .large_col & {
+      flex-basis: 46%
+    }
+  }
+
+  .one_fourth {
+    flex-basis: 22%;
+
+    .large_col & {
+      flex-basis: 19%;
+    }
+  }
+
+  .three_fourth {
+    flex-basis: 74%;
+
+    .large_col & {
+      flex-basis: 73%;
+    }
+  }
+
+  // Mod 3
+  .one_third {
+    flex-basis: 30.66%;
+
+    .large_col & {
+      flex-basis: 28%;
+    }
+  }
+
+  .two_third {
+    flex-basis: 65.33%;
+
+    .large_col & {
+      flex-basis: 64%;
+    }
+  }
+
+  // Mod 5
+  .one_fifth {
+    flex-basis: 16.8%;
+
+    .large_col & {
+      flex-basis: 13.6%;
+    }
+  }
+
+  .two_fifth {
+    flex-basis: 37.6%;
+
+    .large_col & {
+      flex-basis: 35.2%;
+    }
+  }
+
+  .three_fifth {
+    flex-basis: 58.4%;
+
+    .large_col & {
+      flex-basis: 56.8%;
+    }
+  }
+
+}
+
+// 8% margin (not really for 4 cols)
+// .span_3_of_4 { width: 73%;
+// .span_2_of_4 { width: 46%;
+// .span_1_of_4 { width: 19%;
+// .span_2_of_3 { width: 64%;
+// .span_1_of_3 { width: 28%;
+// .span_3_of_5 { width: 56.8%;
+// .span_2_of_5 { width: 35.2%;
+// .span_1_of_5 { width: 13.6%;
+
+// 4% margin
+// .span_3_of_4 { width: 74%;
+// .span_2_of_4 { width: 48%;
+// .span_1_of_4 { width: 22%;
+// .span_2_of_3 { width: 65.33%;
+// .span_1_of_3 { width: 30.66%;
+// .span_3_of_5 { width: 58.4%;
+// .span_2_of_5 { width: 37.6%;
+// .span_1_of_5 { width: 16.8%;
+
+// 2% margin
+// .span_3_of_4 { width: 74.5%
+// .span_2_of_4 { width: 49%
+// .span_1_of_4 { width: 23.5%
+// .span_2_of_3 { width: 66%;
+// .span_1_of_3 { width: 32%;
+
+
+// GRID COLUMNS 
+
+// .grid_four_col {
+//   display: grid;
+//   grid-template-columns: repeat(4, 1fr);
+//   grid-column-gap: 2%;
+// }
+
+// .grid_three_col {
+//   display: grid;
+//   grid-template-columns: repeat(3, 1fr);
+//   grid-column-gap: 2%;
+// }
+
+// .grid_two_col {
+//   display: grid;
+//   grid-template-columns: repeat(2, 1fr);
+//   grid-column-gap: 2%;
+// }

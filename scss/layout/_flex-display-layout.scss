@@ -1,0 +1,35 @@
+.flex-and-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-and-wrap-justify {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 44px;
+}
+
+.flex-row {
+  display: flex;
+  gap: var(--wp--style--block-gap, 0.5em);
+}
+
+.flex-row-wrap {
+  @extend .flex-row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.flex-column {
+  @extend .flex-row;
+  flex-direction: column;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-content-start {
+  align-content: flex-start;
+}

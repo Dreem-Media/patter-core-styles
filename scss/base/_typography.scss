@@ -1,3 +1,13 @@
 //============
 // Typography
 //============
+
+p {
+  &:last-child:not(:first-child) {
+    margin-bottom: 0;
+  }
+}
+
+p.is-style-larger {
+  font-size: 125% !important;
+}

@@ -8,8 +8,8 @@ $heading: #171717 !default;
 $text: #171717 !default;
 $danger: #d8000c !default;
 
-$darken: 25;
-$lighten: 15;
+$darken: 25 !default;
+$lighten: 15 !default;
 
 $colors: (
   primary: (
@@ -23,18 +23,12 @@ $colors: (
     light: lighten($secondary, $lighten),
   ),
   heading: (
-    base: $heading,
-    dark: darken($heading, $darken),
-    light: lighten($heading, $lighten),
+    base: $heading
   ),
   text: (
-    base: $text,
-    dark: darken($text, $darken),
-    light: lighten($text, $lighten),
+    base: $text
   ),
   danger: (
-    base: $danger,
-    dark: darken($danger, $darken),
-    light: lighten($danger, $lighten),
+    base: $danger
   )
 );
