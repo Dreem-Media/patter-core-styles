@@ -25,3 +25,9 @@ $heading: #171717 !default;
 $text: #171717 !default;
 $danger: #d8000c !default;
 ```
+
+## Publishing
+
+Update `version` in package.json
+
+`$ npm run publish-package`
