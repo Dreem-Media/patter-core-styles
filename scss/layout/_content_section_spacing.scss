@@ -6,7 +6,7 @@ $value in $content-sections {
     padding-top: $value  !important;
     padding-bottom: $value  !important;
 
-    @include media("<tablet") {
+    @include media("<phone") {
       padding-top: ($value* 0.7) !important;
       padding-bottom: ($value * 0.7) !important;
     }
@@ -14,7 +14,7 @@ $value in $content-sections {
     &--bottom {
       padding-bottom: $value  !important;
 
-      @include media("<tablet") {
+      @include media("<phone") {
         padding-bottom: ($value * 0.7) !important;
       }
     }
