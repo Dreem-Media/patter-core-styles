@@ -1,20 +1,20 @@
-@use "../abstracts"as *;
+@use "../abstracts" as *;
 
 @each $name,
 $value in $content-sections {
   .#{$name}-section {
-    padding-top: $value !important;
-    padding-bottom: $value !important;
+    padding-top: $value  !important;
+    padding-bottom: $value  !important;
 
-    @include media(">=phone") {
+    @include media("<tablet") {
       padding-top: ($value* 0.7) !important;
       padding-bottom: ($value * 0.7) !important;
     }
 
     &--bottom {
-      padding-bottom: $value !important;
+      padding-bottom: $value  !important;
 
-      @include media(">=phone") {
+      @include media("<tablet") {
         padding-bottom: ($value * 0.7) !important;
       }
     }
