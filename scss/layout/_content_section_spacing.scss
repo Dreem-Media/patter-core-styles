@@ -18,5 +18,13 @@ $value in $content-sections {
         padding-bottom: ($value * 0.7) !important;
       }
     }
+
+    &--top {
+      padding-top: $value  !important;
+
+      @include media("<phone") {
+        padding-top: ($value * 0.7) !important;
+      }
+    }
   }
 }
