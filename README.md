@@ -1,10 +1,16 @@
 # patter-core-styles
 
-Core SCSS UI Kit
+Core SCSS UI Kit & JS Lib
 
-Written for Wordpress 5.9 themes, but can be used anywhere
+Written for Wordpress 5.9+ themes by Patter Agency, but can be used anywhere
 
-## Usage
+## Publishing
+
+Update `version` in package.json
+
+`$ npm run publish-package`
+
+## Styles Usage
 
 Add the following line into you main SCSS import
 `@use '~@patter/patter-core-styles/scss/main';`
@@ -16,7 +22,7 @@ Useful for child wordpress themes already relying on a larger library
 Add the following line into you main SCSS import
 `@use '~@patter/patter-core-styles/scss/helpers';`
 
-## Defaults
+### Defaults
 
 ```scss
 $primary: #e51c3a !default;
@@ -26,8 +32,10 @@ $text: #171717 !default;
 $danger: #d8000c !default;
 ```
 
-## Publishing
+## JS Usage
 
-Update `version` in package.json
+Add the following line into you main public import
+`@use '~@patter/patter-core-styles/js/public.js';`
 
-`$ npm run publish-package`
+Add the following line into you main admin import
+`@use '~@patter/patter-core-styles/js/admin.js';`

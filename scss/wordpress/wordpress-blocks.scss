@@ -1,0 +1,65 @@
+@use "../abstracts" as *;
+
+// Image
+.wp-block-image {
+  margin-bottom: 0 !important;
+}
+
+// Columns
+// .wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column:not(:first-child) {
+//   @include media(">=phone") {
+//     margin-left: 4.4em;
+//   }
+// }
+
+// Buttons
+// core/buttons, core/button
+.wp-block-buttons {
+  column-gap: calc(var(--wp--style--block-gap, 40px) / 2);
+}
+
+p+.wp-block-buttons {
+  margin-top: 20px;
+}
+
+// Columns
+// core/columns
+.wp-block-patter-block-wrapper-000 {
+  .wp-block-columns {
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include media("<phone") {
+      gap: calc(var(--wp--style--block-gap, 40px) / 2);
+    }
+
+  }
+}
+
+.wp-block-columns.is-style-no-gap:not(.is-not-stacked-on-mobile)>.wp-block-column:not(:first-child) {
+  margin-left: 0;
+}
+
+// Gallery
+.wp-block-gallery {
+  row-gap: var(--gallery-block--gutter-size, 16px);
+}
+
+// Cover Block
+.wp-block-cover {
+
+  &.alignfull {
+    width: unset;
+  }
+
+  &__inner-container {
+    max-width: var(--wp--custom--content-width-thin);
+  }
+}
+
+// Cover Block & others
+.is-style-rounded {
+  border-radius: var(--wp--custom--rounded-border-radius, 10px);
+  overflow: hidden;
+}

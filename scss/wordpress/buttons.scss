@@ -1,0 +1,47 @@
+/**
+ * Native Gutenburg Button Blocks
+ */
+
+$button-padding: 22px 40px;
+$button-border-width: 2px;
+
+.wp-block-button__link {
+  // Most bits are defined by the native theme.json output
+  appearance: none;
+  padding: $button-padding;
+  transition: border-color 0.3s, color 0.3s, background-color 0.3s;
+  border: $button-border-width solid var(--wp--preset--color--primary);
+  border-radius: var(--wp--custom--default-border-radius, 0);
+
+  &:focus,
+  &:hover {
+    border-color: var(--wp--custom--color--primary-hover);
+    background-color: var(--wp--custom--color--primary-hover);
+  }
+
+  // Outline / Transparent button
+  .is-style-outline & {
+    background-color: transparent;
+    border: $button-border-width solid var(--wp--preset--color--light);
+
+    &:focus,
+    &:hover {
+      border-color: var(--wp--custom--color--primary-hover);
+      color: var(--wp--preset--color--light);
+      background-color: var(--wp--custom--color--primary-hover);
+    }
+  }
+
+  // Dark button
+  .is-style-dark-button & {
+    background-color: var(--wp--preset--color--dark) !important;
+    color: var(--wp--preset--color--light) !important;
+    border-color: var(--wp--preset--color--dark) !important;
+
+    &:focus,
+    &:hover {
+      border-color: var(--wp--custom--color--primary-hover) !important;
+      background-color: var(--wp--custom--color--primary-hover) !important;
+    }
+  }
+}

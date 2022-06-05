@@ -1,7 +1,10 @@
+@use "../abstracts"as *;
+
 //============
 // Typography
 //============
 
+// General
 p {
   &:last-child:not(:first-child) {
     margin-bottom: 0;
@@ -10,4 +13,50 @@ p {
 
 p.is-style-larger {
   font-size: 125% !important;
+}
+
+// Headings 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  // Covered in padding
+  &.small-section--bottom {
+    margin-bottom: 0;
+  }
+}
+
+h1.is-style-larger,
+.h1.is-style-larger {
+  @include media(">=phone") {
+    font-size: var(--wp--custom--typography--font-size--heading-1-larger) !important;
+  }
+}
+
+h2.is-style-larger,
+.h2.is-style-larger {
+  @include media(">=phone") {
+    font-size: var(--wp--custom--typography--font-size--heading-1) !important;
+  }
+}
+
+h3.is-style-larger,
+.h3.is-style-larger {
+  @include media(">=phone") {
+    font-size: var(--wp--custom--typography--font-size--heading-2) !important;
+  }
+}
+
+// Wordpress addition
+.has-huge-font-size {
+  line-height: 1.5;
 }

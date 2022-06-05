@@ -1,0 +1,302 @@
+// Patter slim copy of AOS Animations
+// https://github.com/michalsnik/aos
+// https://github.com/michalsnik/aos/tree/next/src/sass
+
+
+// Settings
+
+// Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+// offset: 120, // offset (in px) from the original trigger point
+// delay: 0, // values from 0 to 3000, with step 50ms
+// duration: 400, // values from 0 to 3000, with step 50ms
+// easing: 'ease', // default easing for AOS animations
+// once: false, // whether animation should happen only once - while scrolling down
+// mirror: false, // whether elements should animate out while scrolling past them
+// anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+
+
+// data-aos-anchor="#xxx" - The ID of another element
+
+
+// Example custom animation
+
+// <div class="item" data-aos="example-anim3">3</div>
+
+// [data-aos="example-anim3"] {
+//   transform: rotate(360deg);
+//   opacity: 0;
+//   transition-property: transform, opacity;
+//   &.aos-animate {
+//     transform: rotate(0);
+//     opacity: 1;
+//   }
+// }
+
+
+
+// Patter overwrites
+
+// Prevent clicking on non animated items
+// [data-aos] {
+//   pointer-events: none;
+
+//   &.aos-animate {
+//     pointer-events: auto;
+//   }
+// }
+
+
+// Library functions
+
+
+// Generate Duration & Delay
+
+// Small numbers, 200, 400, 600, 800
+[data-aos] {
+  @for $i from 1 through 4 {
+    $step: 200;
+
+    body[data-aos-duration='#{$i * $step}'] &,
+    &[data-aos][data-aos-duration='#{$i * $step }'] {
+      transition-duration: #{$i * $step}ms;
+    }
+
+    body[data-aos-delay='#{$i * $step}'] &,
+    &[data-aos][data-aos-delay='#{$i * $step}'] {
+      transition-delay: 0;
+
+      &.aos-animate {
+        transition-delay: #{$i * $step }ms;
+      }
+    }
+  }
+}
+
+// Large numbers, 1000, 1500, 2000
+[data-aos] {
+  @for $i from 1 through 3 {
+    $step: 500;
+
+    body[data-aos-duration='#{$i * $step + $step}'] &,
+    &[data-aos][data-aos-duration='#{$i * $step + $step}'] {
+      transition-duration: #{$i * $step+ $step}ms;
+    }
+
+    body[data-aos-delay='#{$i * $step+ $step}'] &,
+    &[data-aos][data-aos-delay='#{$i * $step+ $step}'] {
+      transition-delay: 0;
+
+      &.aos-animate {
+        transition-delay: #{$i * $step + $step}ms;
+      }
+    }
+  }
+}
+
+
+
+
+// Animations variables
+$aos-distance: 100px !default;
+
+/**
+ * Fade animations:
+ * fade
+ * fade-up, fade-down, fade-left, fade-right
+ * fade-up-right, fade-up-left, fade-down-right, fade-down-left
+ */
+
+[data-aos^='fade'][data-aos^='fade'] {
+  opacity: 0;
+  transition-property: opacity, transform;
+
+  &.aos-animate {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+[data-aos='fade-up'] {
+  transform: translate3d(0, $aos-distance, 0);
+}
+
+[data-aos='fade-down'] {
+  transform: translate3d(0, -$aos-distance, 0);
+}
+
+[data-aos='fade-right'] {
+  transform: translate3d(-$aos-distance, 0, 0);
+}
+
+[data-aos='fade-left'] {
+  transform: translate3d($aos-distance, 0, 0);
+}
+
+[data-aos='fade-up-right'] {
+  transform: translate3d(-$aos-distance, $aos-distance, 0);
+}
+
+[data-aos='fade-up-left'] {
+  transform: translate3d($aos-distance, $aos-distance, 0);
+}
+
+[data-aos='fade-down-right'] {
+  transform: translate3d(-$aos-distance, -$aos-distance, 0);
+}
+
+[data-aos='fade-down-left'] {
+  transform: translate3d($aos-distance, -$aos-distance, 0);
+}
+
+
+/**
+ * Zoom animations:
+ * zoom-in, zoom-in-up, zoom-in-down, zoom-in-left, zoom-in-right
+ * zoom-out, zoom-out-up, zoom-out-down, zoom-out-left, zoom-out-right
+ */
+
+[data-aos^='zoom'][data-aos^='zoom'] {
+  opacity: 0;
+  transition-property: opacity, transform;
+
+  &.aos-animate {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+[data-aos='zoom-in'] {
+  transform: scale(.6);
+}
+
+[data-aos='zoom-in-up'] {
+  transform: translate3d(0, $aos-distance, 0) scale(.6);
+}
+
+[data-aos='zoom-in-down'] {
+  transform: translate3d(0, -$aos-distance, 0) scale(.6);
+}
+
+[data-aos='zoom-in-right'] {
+  transform: translate3d(-$aos-distance, 0, 0) scale(.6);
+}
+
+[data-aos='zoom-in-left'] {
+  transform: translate3d($aos-distance, 0, 0) scale(.6);
+}
+
+[data-aos='zoom-out'] {
+  transform: scale(1.2);
+}
+
+[data-aos='zoom-out-up'] {
+  transform: translate3d(0, $aos-distance, 0) scale(1.2);
+}
+
+[data-aos='zoom-out-down'] {
+  transform: translate3d(0, -$aos-distance, 0) scale(1.2);
+}
+
+[data-aos='zoom-out-right'] {
+  transform: translate3d(-$aos-distance, 0, 0) scale(1.2);
+}
+
+[data-aos='zoom-out-left'] {
+  transform: translate3d($aos-distance, 0, 0) scale(1.2);
+}
+
+
+/**
+ * Slide animations
+ */
+
+[data-aos^='slide'][data-aos^='slide'] {
+  transition-property: transform;
+
+  &.aos-animate {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+[data-aos='slide-up'] {
+  transform: translate3d(0, 100%, 0);
+}
+
+[data-aos='slide-down'] {
+  transform: translate3d(0, -100%, 0);
+}
+
+[data-aos='slide-right'] {
+  transform: translate3d(-100%, 0, 0);
+}
+
+[data-aos='slide-left'] {
+  transform: translate3d(100%, 0, 0);
+}
+
+/**
+ * Flip animations:
+ * flip-left, flip-right, flip-up, flip-down
+ */
+
+[data-aos^='flip'][data-aos^='flip'] {
+  backface-visibility: hidden;
+  transition-property: transform;
+}
+
+[data-aos='flip-left'] {
+  transform: perspective(2500px) rotateY(-100deg);
+
+  &.aos-animate {
+    transform: perspective(2500px) rotateY(0);
+  }
+}
+
+[data-aos='flip-right'] {
+  transform: perspective(2500px) rotateY(100deg);
+
+  &.aos-animate {
+    transform: perspective(2500px) rotateY(0);
+  }
+}
+
+[data-aos='flip-up'] {
+  transform: perspective(2500px) rotateX(-100deg);
+
+  &.aos-animate {
+    transform: perspective(2500px) rotateX(0);
+  }
+}
+
+[data-aos='flip-down'] {
+  transform: perspective(2500px) rotateX(100deg);
+
+  &.aos-animate {
+    transform: perspective(2500px) rotateX(0);
+  }
+}
+
+// Easing
+
+$aos-easing: (
+  ease: ease,
+  ease-in: cubic-bezier(.55, .085, .68, .53),
+  ease-out: cubic-bezier(.25, .46, .45, .94),
+
+  ease-in-out-back: cubic-bezier(.68, -.55, .265, 1.55),
+);
+
+// Easings implementations
+// Default timing function: 'ease'
+
+[data-aos] {
+
+  @each $key,
+  $val in $aos-easing {
+
+    body[data-aos-easing="#{$key}"] &,
+    &[data-aos][data-aos-easing="#{$key}"] {
+      transition-timing-function: $val;
+    }
+  }
+}

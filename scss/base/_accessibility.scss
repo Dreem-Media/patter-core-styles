@@ -1,0 +1,6 @@
+.user-is-tabbing *:focus {
+  outline-color: var(--wp--preset--color--primary) !important;
+  outline-style: solid;
+  outline-offset: 3px;
+  outline-width: 2px;
+}

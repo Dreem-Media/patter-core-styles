@@ -1,10 +1,13 @@
 {
   "name": "@patter/patter-core-styles",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "description": "Core SCSS UI Kit",
   "main": "scss/main.scss",
   "scripts": {
-    "publish-package": "npm publish --access public"
+    "publish-package": "npm publish --access public",
+    "build-main": "sass scss/main.scss dist/main.css",
+    "build-wordpress": "sass scss/wordpress-public.scss dist/wordpress-public.css",
+    "build-wordpress-admin": "sass scss/wordpress-admin.scss dist/wordpress-admin.css"
   },
   "repository": {
     "type": "git",
@@ -21,5 +24,8 @@
   "homepage": "https://github.com/Dreem-Media/patter-core-styles#readme",
   "keywords": [
     "scss"
-  ]
+  ],
+  "dependencies": {
+    "aos": "^2.3.4"
+  }
 }

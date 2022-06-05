@@ -1,0 +1,10 @@
+// Admin Editor CSS 
+
+@forward "wordpress/admin-block-editor";
+
+// Admin CSS
+@forward 'wordpress/background-images';
+@forward 'wordpress/buttons';
+@forward 'wordpress/general-elements';
+@forward 'wordpress/pagination';
+@forward 'wordpress/wordpress-blocks';
