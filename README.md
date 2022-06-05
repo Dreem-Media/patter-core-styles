@@ -39,7 +39,7 @@ $danger: #d8000c !default;
 ## JS Usage
 
 Add the following line into you main public import
-`@use '~@patter/patter-core-styles/js/public.js';`
+`import '~@patter/patter-core-styles/js/publc.js';`
 
 Add the following line into you main admin import
-`@use '~@patter/patter-core-styles/js/admin.js';`
+`import '~@patter/patter-core-styles/js/admin.js';`

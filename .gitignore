@@ -11,6 +11,3 @@ node_modules/
 # production assets
 dist
 build
-
-# php composer
-vendor
