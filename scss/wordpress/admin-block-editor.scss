@@ -1,6 +1,6 @@
 // Sidebar width
 .edit-post-sidebar {
-  width: 480px;
+  width: 460px;
 }
 
 /* Width of "center" blocks */
@@ -12,8 +12,10 @@
 }
 
 .editor-styles-wrapper .block-editor-block-list__layout.is-root-container {
-  >.aligncenter {
+  .aligncenter {
     max-width: var(--wp--custom--content-width-thin, 800px) !important;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
