@@ -15,7 +15,10 @@ Update `version` in package.json
 Add the following line into you main SCSS import
 `@use '~@patter/patter-core-styles/scss/main';`
 
-if using wordpress: 
+If using animations:
+`@use '~@patter/patter-core-styles/scss/aos-animations';`
+
+If using wordpress: 
 `@use '~@patter/patter-core-styles/scss/wordpress-public';`
 `@use '~@patter/patter-core-styles/scss/wordpress-admin';`
 
