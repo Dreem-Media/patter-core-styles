@@ -3,7 +3,5 @@
 //=======================================
 
 // VENDOR
-@forward "vendor/normalize";
-
-// ABSTRACT
+@forward "base/normalize";
 @forward "abstracts/helper";

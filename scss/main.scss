@@ -2,13 +2,11 @@
 // Do not change the order of those files
 //=======================================
 
-// VENDOR
-@forward "vendor/normalize";
-
 // ABSTRACT
 @forward "abstracts/helper";
 
 // BASE
+@forward "base/normalize";
 @forward "base/global";
 @forward "base/typography";
 @forward "base/accessibility";
