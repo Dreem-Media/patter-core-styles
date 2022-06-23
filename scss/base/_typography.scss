@@ -1,4 +1,4 @@
-@use "../abstracts"as *;
+@use "../abstracts" as *;
 
 //============
 // Typography
@@ -13,6 +13,10 @@ p {
 
 p.is-style-larger {
   font-size: 125% !important;
+
+  @include media("<phone") {
+    font-size: 120% !important;
+  }
 }
 
 // Headings 

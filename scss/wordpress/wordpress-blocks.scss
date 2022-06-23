@@ -5,13 +5,6 @@
   margin-bottom: 0 !important;
 }
 
-// Columns
-// .wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column:not(:first-child) {
-//   @include media(">=phone") {
-//     margin-left: 4.4em;
-//   }
-// }
-
 // Buttons
 // core/buttons, core/button
 .wp-block-buttons {
@@ -29,16 +22,18 @@ p+.wp-block-buttons {
     &:last-child {
       margin-bottom: 0;
     }
-
-    @include media("<phone") {
-      gap: calc(var(--wp--style--block-gap, 40px) / 2);
-    }
-
   }
 }
 
 .wp-block-columns.is-style-no-gap:not(.is-not-stacked-on-mobile)>.wp-block-column:not(:first-child) {
   margin-left: 0;
+}
+
+// Columns
+.wp-block-columns:not(.is-not-stacked-on-mobile) {
+  @include media("<phone") {
+    gap: calc(var(--wp--style--block-gap, 40px) / 2);
+  }
 }
 
 // Gallery

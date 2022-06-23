@@ -1,4 +1,4 @@
-@use "../abstracts"as *;
+@use "../abstracts" as *;
 
 //============
 // Grid
@@ -8,6 +8,17 @@
 // Wrap with flex-and-wrap-justify
 
 .full_width {
+  flex-basis: 100%;
+}
+
+.one_half,
+.one_fourth,
+.three_fourth,
+.one_third,
+.two_third,
+.one_fifth,
+.two_fifth,
+.three_fifth {
   flex-basis: 100%;
 }
 
