@@ -46,3 +46,6 @@ Add the following line into you main public import
 
 Add the following line into you main admin import
 `import '@patter/patter-core-styles/js/admin.js';`
+
+## Navigation Styles
+
