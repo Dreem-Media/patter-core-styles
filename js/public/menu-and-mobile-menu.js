@@ -106,6 +106,25 @@ DOMReady(() => {
     });
 
     mobileNav.appendChild(closeButton);
+
+    // Go back
+    const subMenus = mobileNav.querySelectorAll('.sub-menu-wrap .sub-menu');
+    subMenus.forEach(subMenu => {
+
+      const goBackButtonWrap = document.createElement("li");
+      goBackButtonWrap.className = 'gobacktoprevious';
+
+      const goBackButton = document.createElement("a");
+      goBackButton.innerText = '< Back';
+
+      goBackButton.addEventListener('click', function (e) {
+        this.parentNode.parentNode.parentNode.parentNode.classList.remove(submenuActiveClass);
+      });
+
+      goBackButtonWrap.appendChild(goBackButton);
+
+      subMenu.insertBefore(goBackButtonWrap, subMenu.firstChild);
+    });
   }
 
 });
