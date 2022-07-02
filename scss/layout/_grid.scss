@@ -31,6 +31,20 @@
     .large_col & {
       flex-basis: 46%
     }
+
+    &--border-after {
+
+      position: relative;
+
+      &:after {
+        content: '';
+        position: absolute;
+        border-right: 1px solid var(--wp--custom--color--border);
+        height: 100%;
+        right: -4%;
+        top: 0;
+      }
+    }
   }
 
   .one_fourth {

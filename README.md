@@ -4,6 +4,8 @@ Core SCSS UI Kit & JS Lib
 
 Written for Wordpress 5.9+ themes by Patter Agency, but can be used anywhere
 
+Combination between Bootstrap class names and native wordpress classnames
+
 ## Publishing
 
 Update `version` in package.json
