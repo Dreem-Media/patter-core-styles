@@ -3,7 +3,7 @@ import { DOMReady } from "./_utils";
 import AOS from 'aos';
 
 DOMReady(() => {
-  AOS.init({ delay: 200, offset: 400, anchorPlacement: 'bottom-bottom' });
+  AOS.init({ delay: 200, offset: 200, anchorPlacement: 'center-bottom' });
 });
 
 // You can also pass an optional settings object
