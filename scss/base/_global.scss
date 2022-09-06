@@ -6,8 +6,6 @@
 
 html {
   box-sizing: border-box;
-  overflow: hidden;
-  position: relative;
 }
 
 body {
@@ -35,4 +33,11 @@ img {
   max-width: 100%;
   display: block; // Or inline-block? always makes full width
   height: auto;
+}
+
+// IOS Safari scrolling fix
+// Patter theme spesific
+#top.wrapper {
+  overflow: hidden;
+  position: relative;
 }
