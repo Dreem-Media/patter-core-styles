@@ -1,0 +1,156 @@
+@use "../abstracts" as *;
+
+// Prevent scroll on body when menu is open
+.m-nav-is-open.m-nav-style--skew {
+  overflow: hidden;
+
+  // Prevent tabbing when mobile menu is open
+  main,
+  footer {
+    visibility: hidden;
+  }
+
+}
+
+/* Main menu positionning */
+.m-nav-style--skew {
+  .m-nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    background: #fff;
+    opacity: 0;
+    z-index: -1;
+    visibility: hidden;
+    transition: all .375s;
+
+    @include media(">=tablet") {
+      display: none;
+    }
+
+    &.is-open {
+      opacity: 1;
+      z-index: 100;
+      visibility: visible;
+    }
+
+    // Wrapper div
+    >div {
+      height: 100%;
+    }
+  }
+
+  /* Background stripe */
+  .m-nav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: -20vh;
+    left: 0;
+    right: -15px;
+    background: var(--wp--preset--color--secondary);
+    transform-origin: 0 0;
+    transform: skew(-14deg) translateX(-120%);
+    transition: all .275s .1s;
+  }
+
+  .m-nav.is-open::before {
+    transform: skew(-14deg) translateX(0);
+  }
+
+  /* Skewing effect on menu links */
+  .m-nav ul {
+    display: inline-flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: flex-end;
+    justify-content: center;
+    transform: translateX(-18%) skew(-16deg);
+  }
+
+  .m-nav li {
+    display: block;
+    margin: .5rem 0;
+    text-align: right;
+    transform: skew(16deg);
+  }
+
+  /* Apparition effect on links */
+  .m-nav a {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  .m-nav.is-open a {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .m-nav li:nth-child(1) a {
+    transition: all 275ms 175ms
+  }
+
+  .m-nav li:nth-child(2) a {
+    transition: all 275ms 225ms
+  }
+
+  .m-nav li:nth-child(3) a {
+    transition: all 275ms 275ms
+  }
+
+  .m-nav li:nth-child(4) a {
+    transition: all 275ms 325ms
+  }
+
+  .m-nav li:nth-child(5) a {
+    transition: all 275ms 375ms
+  }
+
+  .m-nav a {
+    display: block;
+    padding: 12px 0;
+    color: var(--wp--preset--color--white);
+    font-size: 1.2em;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+
+  .m-nav {
+    .sub-menu-wrap {
+      height: 0;
+      overflow: hidden;
+      transition: 0.3s all;
+      width: 220px;
+      right: 0;
+      position: relative;
+      visibility: hidden;
+    }
+
+    .sub-menu {
+      height: auto;
+    }
+  }
+
+
+
+  nav.has-submenu-active {
+    a {
+      opacity: 0.4 !important;
+    }
+
+    .submenu-active {
+      .sub-menu-wrap {
+        visibility: visible;
+      }
+
+      a {
+        opacity: 1 !important;
+      }
+    }
+  }
+
+}

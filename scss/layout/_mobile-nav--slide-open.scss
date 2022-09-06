@@ -1,0 +1,113 @@
+@use "../abstracts" as *;
+
+.m-nav-style--slide {
+
+  .m-nav {
+    position: fixed;
+    display: block;
+    left: 110%;
+    top: 0;
+    bottom: 0;
+    right: -50%;
+    background: #000;
+    z-index: 1005;
+    box-shadow: -1px -1px 15px #000;
+    transition: all 0.33s;
+    overflow: hidden;
+
+    @include media(">=tablet") {
+      display: none;
+    }
+
+    &.is-open {
+      left: 20%;
+      right: 0;
+    }
+
+    a {
+      display: block;
+      border-bottom: 1px solid var(--wp--preset--color--primary);
+      padding: 20px;
+      background-repeat: no-repeat;
+      background-position: 95% 50%;
+      color: var(--wp--preset--color--white);
+
+      &::before,
+      &::after {
+        display: none;
+        content: none;
+      }
+    }
+
+    .menu {
+      display: block;
+    }
+
+    li {
+      &.submenu-active {
+        .sub-menu-wrap {
+          left: 5%;
+          right: 0;
+        }
+      }
+    }
+
+    .sub-menu-wrap {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 110%;
+      top: 0;
+      bottom: 0;
+      right: -50%;
+      background: #000;
+      overflow: auto;
+      z-index: 155;
+      transition: all 0.33s;
+      box-shadow: -1px -1px 15px #000;
+    }
+
+    .close-menu {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      display: block;
+      border: none;
+      border-top: 1px solid var(--wp--preset--color--primary);
+      color: var(--wp--preset--color--white);
+      padding: 20px;
+      background-color: #000;
+      text-transform: uppercase;
+      text-align: left;
+      cursor: pointer;
+    }
+
+  }
+
+  // Body is open changes
+  &.m-nav-is-open {
+
+    // Prevent scroll on body when menu is open
+    overflow: hidden;
+
+    // Add fade to wrapper
+    #top.wrapper {
+      opacity: .6;
+    }
+  }
+
+  // Add opacity to wrapper
+  #top.wrapper {
+    transition: .33s opacity;
+  }
+
+  // Menu top when admin bar
+  &.admin-bar {
+    .m-nav {
+      top: 46px;
+    }
+  }
+
+}

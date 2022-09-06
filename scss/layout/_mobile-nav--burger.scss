@@ -1,0 +1,94 @@
+@use "../abstracts" as *;
+
+/* Burger Style: 
+ * @see: https://codepen.io/CreativeJuiz/full/oMZNXy 
+ */
+ $burgerColor: var(--wp--preset--color--primary);
+
+ .open-main-nav {
+   appearance: none;
+   padding-top: 20px;
+   right: 15px;
+   z-index: 1000;
+   background: none;
+   border: 0;
+   cursor: pointer;
+ 
+   @include media(">=tablet") {
+     display: none;
+   }
+ }
+ 
+ 
+ .burger {
+   position: relative;
+   display: block;
+   width: 28px;
+   height: 4px;
+   margin: 0 auto;
+   background: $burgerColor;
+   transform: skew(5deg);
+   transition: all .275s;
+ 
+   &:before,
+   &:after {
+     content: '';
+     display: block;
+     height: 100%;
+     background: $burgerColor;
+     transition: all .275s;
+   }
+ 
+   &:before {
+     transform: translateY(-16px) skew(-10deg);
+   }
+ 
+   &:after {
+     transform: translateY(-12px) translateX(-2px) skew(-20deg);
+   }
+ 
+   &-text {
+     display: block;
+     font-size: .675rem;
+     letter-spacing: .05em;
+     margin-top: .5em;
+     text-transform: uppercase;
+     font-weight: 500;
+     text-align: center;
+     color: $burgerColor;
+   }
+ 
+ }
+ 
+ // Active state
+ .is-open {
+   .burger {
+     transform: skew(5deg) translateY(-8px) rotate(-45deg);
+ 
+     &:before {
+       transform: translateY(0px) skew(-10deg) rotate(75deg);
+     }
+ 
+     &:after {
+       transform: translateY(-12px) translateX(10px) skew(-20deg);
+       opacity: 0;
+     }
+   }
+ }
+ 
+ // White on other backgrounds
+ [class$="background-color"] {
+ 
+   .burger {
+     background: var(--wp--preset--color--white);
+ 
+     &:before,
+     &:after {
+       background: var(--wp--preset--color--white);
+     }
+ 
+     &-text {
+       color: var(--wp--preset--color--white);
+     }
+   }
+ }
