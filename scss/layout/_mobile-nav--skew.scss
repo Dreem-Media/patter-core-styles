@@ -41,6 +41,34 @@
     >div {
       height: 100%;
     }
+
+    li {
+      display: block;
+      margin: .5rem 0;
+      text-align: right;
+      transform: skew(16deg);
+
+      // Menu button overwrites
+      &:not(.menu-button) {
+        a {
+          color: var(--wp--preset--color--white);
+        }
+      }
+
+      &.menu-button {
+        a {
+          padding-left: 8px !important;
+          padding-right: 8px !important;
+        }
+      }
+    }
+
+    a {
+      display: block;
+      padding: 12px 0;
+      font-size: 1.2em;
+      text-decoration: none;
+    }
   }
 
   /* Background stripe */
@@ -69,13 +97,7 @@
     align-items: flex-end;
     justify-content: center;
     transform: translateX(-18%) skew(-16deg);
-  }
-
-  .m-nav li {
-    display: block;
-    margin: .5rem 0;
-    text-align: right;
-    transform: skew(16deg);
+    row-gap: 4px;
   }
 
   /* Apparition effect on links */
@@ -109,15 +131,13 @@
     transition: all 275ms 375ms
   }
 
-  .m-nav a {
-    display: block;
-    padding: 12px 0;
-    color: var(--wp--preset--color--white);
-    font-size: 1.2em;
-    text-decoration: none;
-    font-weight: bold;
+  .m-nav li:nth-child(6) a {
+    transition: all 275ms 400ms
   }
 
+  .m-nav li:nth-child(7) a {
+    transition: all 275ms 425ms
+  }
 
   .m-nav {
     .sub-menu-wrap {
