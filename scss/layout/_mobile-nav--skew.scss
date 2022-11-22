@@ -106,6 +106,10 @@
     transform: translateY(-10px);
   }
 
+  .m-nav:not(.is-open) a {
+    background: none;
+  }
+
   .m-nav.is-open a {
     opacity: 1;
     transform: translateY(0);
