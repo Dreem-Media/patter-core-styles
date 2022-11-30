@@ -1,6 +1,10 @@
+@use "../abstracts" as *;
+
 // Sidebar width
 .edit-post-sidebar {
-  width: 460px;
+  @include media(">tablet") {
+    width: 450px;
+  }
 }
 
 /* Width of "center" blocks */
