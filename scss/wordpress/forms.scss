@@ -121,15 +121,40 @@ form {
 }
 
 // Gravity Form Styles
+
 .gform_wrapper {
+
   .gform_title {
     text-align: left;
-    margin-top: 16px;
     font-size: var(--wp--custom--typography--font-size--heading-3);
+    // margin-top: 16px;
+  }
+
+  // Taken care of by row spacing
+  input {
+    margin: 0 !important;
   }
 
   .gfield {
     margin-bottom: 12px;
+    grid-column: 1 #{"/"} -1;
+    min-width: 0;
+
+    &.gform_hidden {
+      display: none;
+    }
+
+    &--width-third {
+      grid-column: span 4
+    }
+
+    &--width-half {
+      grid-column: span 6;
+    }
+
+    &--width-full {
+      grid-column: span 12;
+    }
   }
 
   .hidden_label {
@@ -157,9 +182,18 @@ form {
     font-style: italic;
   }
 
+  .gform_required_legend {
+    position: absolute;
+    left: -200em;
+    width: 0;
+  }
+
+  .gform-button--width-full {
+    width: 100%;
+  }
+
   // Error Messages
   .gfield_error {
-
     label {
       color: var(--wp--custom--color--error) !important;
     }
@@ -199,21 +233,19 @@ form {
       margin: 6px 0;
     }
   }
+
 }
 
 .gform_fields {
   list-style: none;
   padding: 0;
   margin: 0;
-}
 
-.gform_required_legend {
-  position: absolute;
-  left: -200em;
-  width: 0;
-}
-
-.gform-button--width-full {
+  grid-column-gap: 1rem;
+  grid-row-gap: 0;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(auto-fill, auto);
   width: 100%;
 }
 

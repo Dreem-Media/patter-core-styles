@@ -58,3 +58,13 @@ p+.wp-block-buttons {
   border-radius: var(--wp--custom--rounded-border-radius, 10px);
   overflow: hidden;
 }
+
+// Patter guteburg blocks
+.block-full-height {
+  min-height: 100vh;
+
+  &:has(> .container__patter_block_inner) {
+    display: flex;
+    align-items: center;
+  }
+}

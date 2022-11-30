@@ -10,6 +10,10 @@
   flex-wrap: wrap;
   justify-content: space-between;
   row-gap: 44px;
+
+  @include media("<phone") {
+    row-gap: 8px;
+  }
 }
 
 .flex-row {
