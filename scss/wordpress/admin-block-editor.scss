@@ -10,14 +10,14 @@
 /* Width of "center" blocks */
 // Wordpress 5.9 and down
 .wp-block[data-align="center"] {
-  max-width: var(--wp--custom--content-width-thin, 800px) !important;
+  max-width: var(--wp--custom--content--width-thin, 800px) !important;
   margin-left: auto;
   margin-right: auto;
 }
 
 .editor-styles-wrapper .block-editor-block-list__layout.is-root-container {
   .aligncenter {
-    max-width: var(--wp--custom--content-width-thin, 800px) !important;
+    max-width: var(--wp--custom--content--width-thin, 800px) !important;
     margin-left: auto;
     margin-right: auto;
   }
@@ -31,8 +31,8 @@
 
 .editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper,
 .editor-styles-wrapper .block-editor-block-list__layout.is-root-container {
-  padding-left: var(--wp--custom--content-min-padding, 16px);
-  padding-right: var(--wp--custom--content-min-padding, 16px);
+  padding-left: var(--wp--custom--content--min-padding, 16px);
+  padding-right: var(--wp--custom--content--min-padding, 16px);
 }
 
 .editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper>*+*,

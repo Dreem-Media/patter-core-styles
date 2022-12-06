@@ -1,14 +1,16 @@
 /**
- * Native Gutenburg Button Blocks
+ * Native Gutenberg Button Blocks
  */
 
 $button-padding: 22px 40px;
 $button-border-width: 2px;
 
+// .wp-element-button, - Also used, needed?
+
 .wp-block-button__link {
   // Most bits are defined by the native theme.json output
   appearance: none;
-  padding: $button-padding !important;
+  padding: var(--wp--custom--content--button-input-padding, $button-padding) !important;
   transition: border-color 0.3s, color 0.3s, background-color 0.3s;
   border: $button-border-width solid var(--wp--preset--color--primary);
   border-radius: var(--wp--custom--default-border-radius, 0);
