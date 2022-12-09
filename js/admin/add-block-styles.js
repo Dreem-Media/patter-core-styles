@@ -7,6 +7,7 @@ wp.blocks.registerBlockStyle('core/paragraph', { name: 'larger', label: 'Larger 
 
 // Columns no spacing 
 wp.blocks.registerBlockStyle('core/columns', { name: 'no-gap', label: 'Remove column gap' });
+wp.blocks.registerBlockStyle('core/columns', { name: 'larger-gap', label: 'Larger column gap' });
 
 // Cover, rounded corners
 wp.blocks.registerBlockStyle('core/cover', { name: 'rounded', label: 'Rounded corners' });

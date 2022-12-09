@@ -1,5 +1,9 @@
 @use "../abstracts" as *;
 
+// TODO - Re look at block gap post wordpress 6.1
+// look at --wp--style--block-gap, "styles": {  "spacing": {  "blockGap": "2rem"
+// Removed for now --wp--style--block-gap > --wp--custom--content--gap
+
 // Image
 .wp-block-image {
   margin-bottom: 0 !important;
@@ -7,8 +11,9 @@
 
 // Buttons
 // core/buttons, core/button
-.wp-block-buttons {
-  column-gap: calc(var(--wp--style--block-gap, 40px) / 2);
+.wp-block-buttons,
+.wp-block-buttons.is-layout-flex {
+  column-gap: calc(var(--wp--custom--content--gap, 40px) / 2);
 }
 
 p+.wp-block-buttons {
@@ -25,15 +30,29 @@ p+.wp-block-buttons {
   }
 }
 
-.wp-block-columns.is-style-no-gap:not(.is-not-stacked-on-mobile)>.wp-block-column:not(:first-child) {
-  margin-left: 0;
+.wp-block-columns,
+.wp-block-columns.is-layout-flex {
+  gap: var(--wp--custom--content--gap, 40px) !important;
+
+  @include media("<phone") {
+    gap: calc(var(--wp--custom--content--gap, 40px) / 2) !important;
+  }
+
+  &.is-style-no-gap {
+    gap: 0 !important;
+  }
+
+  &.is-style-larger-gap {
+    gap: calc(var(--wp--custom--content--gap, 40px) * 2) !important;
+
+    @include media("<phone") {
+      gap: var(--wp--custom--content--gap, 40px) !important;
+    }
+  }
 }
 
-// Columns
-.wp-block-columns:not(.is-not-stacked-on-mobile) {
-  @include media("<phone") {
-    gap: calc(var(--wp--style--block-gap, 40px) / 2);
-  }
+.wp-block-columns.is-style-no-gap:not(.is-not-stacked-on-mobile)>.wp-block-column:not(:first-child) {
+  margin-left: 0;
 }
 
 // Gallery

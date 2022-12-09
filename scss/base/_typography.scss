@@ -15,7 +15,7 @@ p.is-style-larger {
   font-size: 125% !important;
 
   @include media("<phone") {
-    font-size: 120% !important;
+    font-size: 115% !important;
   }
 }
 
