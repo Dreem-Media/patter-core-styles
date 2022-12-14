@@ -66,3 +66,11 @@
     text-decoration: underline;
   }
 }
+
+// Admin scss
+// Waiting for this to be fixed, https://github.com/WordPress/gutenberg/pull/41768
+// + for experimental number control
+.components-base-control,
+.components-number-control {
+  width: 100%;
+}

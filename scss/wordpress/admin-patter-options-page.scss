@@ -1,0 +1,26 @@
+@use "../abstracts" as *;
+
+// Patter Options page
+
+.settings_page_patter-content-options-page {
+
+  #wpcontent {
+    padding-left: 0;
+  }
+
+  .patter-content-options-page {
+
+    &__heading {
+      text-align: center;
+      background: #fff;
+      border-bottom: 1px solid #dcdcde;
+
+      h1 {
+        font-weight: 600;
+        margin: 0;
+        font-size: 23px;
+      }
+    }
+  }
+
+}
