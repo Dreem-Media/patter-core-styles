@@ -3,8 +3,8 @@
 @each $name,
 $value in $content-sections {
   .#{$name}-section {
-    padding-top: $value  !important;
-    padding-bottom: $value  !important;
+    padding-top: $value !important;
+    padding-bottom: $value !important;
 
     @include media("<phone") {
       padding-top: ($value* 0.7) !important;
@@ -12,7 +12,7 @@ $value in $content-sections {
     }
 
     &--bottom {
-      padding-bottom: $value  !important;
+      padding-bottom: $value !important;
 
       @include media("<phone") {
         padding-bottom: ($value * 0.7) !important;
@@ -20,7 +20,7 @@ $value in $content-sections {
     }
 
     &--top {
-      padding-top: $value  !important;
+      padding-top: $value !important;
 
       @include media("<phone") {
         padding-top: ($value * 0.7) !important;

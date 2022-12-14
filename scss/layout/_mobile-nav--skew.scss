@@ -12,7 +12,7 @@
 
 }
 
-/* Main menu positionning */
+/* Main menu positioning */
 .m-nav-style--skew {
   .m-nav {
     position: absolute;
@@ -26,6 +26,7 @@
     z-index: -1;
     visibility: hidden;
     transition: all .375s;
+    overflow: hidden;
 
     @include media(">=tablet") {
       display: none;

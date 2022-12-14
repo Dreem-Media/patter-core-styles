@@ -55,6 +55,12 @@ p+.wp-block-buttons {
   margin-left: 0;
 }
 
+// Groups/Stacks
+.wp-block-group,
+.wp-block-group.is-layout-flex {
+  gap: calc(var(--wp--custom--content--gap, 40px) / 2) !important;
+}
+
 // Gallery
 .wp-block-gallery {
   row-gap: var(--gallery-block--gutter-size, 16px);

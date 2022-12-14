@@ -1,23 +1,38 @@
 @use "../abstracts" as *;
 
+// Helpful
+// https://modern-fluid-typography.vercel.app/
+
 //============
 // Typography
 //============
 
 // General
 p {
+
+  &:first-child:not(:last-child) {
+    margin-bottom: 0;
+  }
+
   &:last-child:not(:first-child) {
     margin-bottom: 0;
   }
-}
 
-p.is-style-larger {
-  font-size: 125% !important;
+  &.is-style-larger {
+    font-size: 125% !important;
 
-  @include media("<phone") {
-    font-size: 115% !important;
+    @include media("<phone") {
+      font-size: 115% !important;
+    }
+  }
+
+  &.is-style-smaller--sm {
+    @include media("<phone") {
+      font-size: var(--wp--preset--font-size--small) !important;
+    }
   }
 }
+
 
 // Headings 
 h1,
@@ -58,6 +73,10 @@ h3.is-style-larger,
   @include media(">=phone") {
     font-size: var(--wp--custom--typography--font-size--heading-2) !important;
   }
+}
+
+.white-space-pre {
+  white-space: pre;
 }
 
 // Wordpress addition

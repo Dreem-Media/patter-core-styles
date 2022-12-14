@@ -1,9 +1,12 @@
 // Theme Buttons via Native Wordpress buttons
 wp.blocks.registerBlockStyle('core/button', { name: 'dark-button', label: 'Dark' });
 
-// Heading / Paragraph "Larger" Styles
-wp.blocks.registerBlockStyle('core/heading', { name: 'larger', label: 'Larger Style' });
-wp.blocks.registerBlockStyle('core/paragraph', { name: 'larger', label: 'Larger Style' });
+// Heading / paragraph "larger" styles
+wp.blocks.registerBlockStyle('core/heading', { name: 'larger', label: 'Larger text' });
+wp.blocks.registerBlockStyle('core/paragraph', { name: 'larger', label: 'Larger text' });
+
+// Paragraph "smaller" styles
+wp.blocks.registerBlockStyle('core/paragraph', { name: 'smaller--sm', label: 'Smaller text on mobile' });
 
 // Columns no spacing 
 wp.blocks.registerBlockStyle('core/columns', { name: 'no-gap', label: 'Remove column gap' });

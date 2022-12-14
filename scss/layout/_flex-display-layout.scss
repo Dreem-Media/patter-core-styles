@@ -9,16 +9,20 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  row-gap: 44px;
+  row-gap: var(--wp--custom--content--gap, 40px);
 
   @include media("<phone") {
-    row-gap: 8px;
+    row-gap: calc(var(--wp--custom--content--gap, 40px) / 2);
   }
 }
 
 .flex-row {
   display: flex;
-  gap: var(--wp--style--block-gap, 0.5em);
+  gap: var(--wp--custom--content--gap, 40px);
+
+  @include media("<phone") {
+    gap: calc(var(--wp--custom--content--gap, 40px) / 2);
+  }
 }
 
 .flex-row-wrap {
