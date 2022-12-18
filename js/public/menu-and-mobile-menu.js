@@ -37,7 +37,7 @@ DOMReady(() => {
     mobileNav?.classList.toggle('is-open');
     body.classList.toggle('m-nav-is-open');
 
-    if (mobileNav.classList.contains('is-open')) {
+    if (mobileNav?.classList.contains('is-open')) {
       const mobileMenuLinks = mobileNav.getElementsByTagName('a');
       if (mobileMenuLinks.length) {
         setTimeout(() => mobileMenuLinks[0].focus(), 200);
