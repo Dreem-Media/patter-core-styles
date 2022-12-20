@@ -82,6 +82,11 @@ p+.wp-block-buttons {
 .is-style-rounded {
   border-radius: var(--wp--custom--rounded-border-radius, 10px);
   overflow: hidden;
+
+  img {
+    border-radius: var(--wp--custom--rounded-border-radius, 10px) !important;
+    overflow: hidden;
+  }
 }
 
 // Patter guteburg blocks
