@@ -7,12 +7,16 @@
 
 // BASE
 @forward "base/normalize";
-@forward "base/global";
-@forward "base/typography";
 @forward "base/accessibility";
+@forward "base/global";
+@forward "base/normalize";
+@forward "base/root-vars";
+@forward "base/typography";
+
 
 // LAYOUT
 @forward "layout/border";
+@forward "layout/container";
 @forward "layout/content_section_spacing";
 @forward "layout/flex-display-layout";
 @forward "layout/grid";
@@ -20,6 +24,7 @@
 @forward "layout/mobile-nav--burger";
 @forward "layout/mobile-nav--skew";
 @forward "layout/mobile-nav--slide-open";
+@forward "layout/global";
 @forward "layout/header";
 @forward "layout/sidebar";
 @forward "layout/footer";
@@ -35,6 +40,7 @@
 @forward "components/modal";
 @forward "components/progress";
 @forward "components/table";
+@forward "components/star-rating";
 
 // PAGES
 @forward "pages/home";

@@ -2,28 +2,31 @@
 
 @each $name,
 $value in $content-sections {
+
+  $sizingString: var(--patter--content-section--#{$name}, $value);
+
   .#{$name}-section {
-    padding-top: $value !important;
-    padding-bottom: $value !important;
+    padding-top: $sizingString !important;
+    padding-bottom: $sizingString !important;
 
     @include media("<phone") {
-      padding-top: ($value* 0.7) !important;
-      padding-bottom: ($value * 0.7) !important;
+      padding-top: calc(#{$sizingString} * 0.7) !important;
+      padding-bottom: calc(#{$sizingString} * 0.7) !important;
     }
 
     &--bottom {
-      padding-bottom: $value !important;
+      padding-bottom: $sizingString !important;
 
       @include media("<phone") {
-        padding-bottom: ($value * 0.7) !important;
+        padding-bottom: calc(#{$sizingString} * 0.7) !important;
       }
     }
 
     &--top {
-      padding-top: $value !important;
+      padding-top: $sizingString !important;
 
       @include media("<phone") {
-        padding-top: ($value * 0.7) !important;
+        padding-top: calc(#{$sizingString} * 0.7) !important;
       }
     }
   }

@@ -1,0 +1,13 @@
+:root {
+  --patter--star-rating-color: #ffc52d; // color: #b8860b;  Nearest accessible
+}
+
+.star-rating--wrapper {
+  color: var(--patter--star-rating-color);
+  display: inline-block;
+  vertical-align: middle;
+
+  .dashicons {
+    vertical-align: middle;
+  }
+}

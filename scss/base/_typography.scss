@@ -57,7 +57,7 @@ h5 {
 h1.is-style-larger,
 .h1.is-style-larger {
   @include media(">=phone") {
-    font-size: var(--wp--custom--typography--font-size--heading-1-larger) !important;
+    font-size: calc(var(--wp--custom--typography--font-size--heading-1) * 1.25) !important;
   }
 }
 

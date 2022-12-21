@@ -74,7 +74,7 @@ p+.wp-block-buttons {
   }
 
   &__inner-container {
-    max-width: var(--wp--custom--content--width-thin);
+    max-width: var(--wp--custom--layout--thin-size, 800px);
   }
 }
 

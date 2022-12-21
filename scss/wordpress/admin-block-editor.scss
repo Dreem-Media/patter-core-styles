@@ -1,43 +1,9 @@
 @use "../abstracts" as *;
 
-// Sidebar width
-.edit-post-sidebar {
-  @include media(">tablet") {
-    width: 450px;
-  }
-}
-
-/* Width of "center" blocks */
-// Wordpress 5.9 and down
-.wp-block[data-align="center"] {
-  max-width: var(--wp--custom--content--width-thin, 800px) !important;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.editor-styles-wrapper .block-editor-block-list__layout.is-root-container {
-  .aligncenter {
-    max-width: var(--wp--custom--content--width-thin, 800px) !important;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-// Remove width for Patter / ACF Blocks
-// Wordpress 5.9 and down
-.wp-block[data-type^="acf"] {
-  max-width: none !important;
-}
-
 .editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper,
 .editor-styles-wrapper .block-editor-block-list__layout.is-root-container {
-  padding-left: var(--wp--custom--content--min-padding, 16px);
-  padding-right: var(--wp--custom--content--min-padding, 16px);
-}
-
-.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper>*+*,
-.editor-styles-wrapper .block-editor-block-list__layout.is-root-container>*+* {
-  margin-top: 1rem !important;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 // "fix" reusable blocks, may have to remove
@@ -51,7 +17,6 @@
 #patter_dashboard_widget_intro {
   .postbox-header {
     background-color: #e51c3a;
-    ;
 
     * {
       color: white;
@@ -74,3 +39,16 @@
 .components-number-control {
   width: 100%;
 }
+
+// // Sidebar width
+// .edit-post-sidebar {
+//   @include media(">tablet") {
+//     width: 450px;
+//   }
+// }
+
+// // Remove width for Patter / ACF Blocks
+// // Wordpress 5.9 and down
+// .wp-block[data-type^="acf"] {
+//   max-width: none !important;
+// }

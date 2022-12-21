@@ -22,22 +22,22 @@ $value in helper.$spacing {
 
   .mt-#{$label},
   .my-#{$label} {
-    margin-top: $value  !important;
+    margin-top: $value !important;
   }
 
   .mb-#{$label},
   .my-#{$label} {
-    margin-bottom: $value  !important;
+    margin-bottom: $value !important;
   }
 
   .ml-#{$label},
   .mx-#{$label} {
-    margin-left: $value  !important;
+    margin-left: $value !important;
   }
 
   .mr-#{$label},
   .mx-#{$label} {
-    margin-right: $value  !important;
+    margin-right: $value !important;
   }
 
   // Padding
@@ -47,22 +47,22 @@ $value in helper.$spacing {
 
   .pt-#{$label},
   .py-#{$label} {
-    padding-top: $value  !important;
+    padding-top: $value !important;
   }
 
   .pb-#{$label},
   .py-#{$label} {
-    padding-bottom: $value  !important;
+    padding-bottom: $value !important;
   }
 
   .pl-#{$label},
   .px-#{$label} {
-    padding-left: $value  !important;
+    padding-left: $value !important;
   }
 
   .pr-#{$label},
   .px-#{$label} {
-    padding-right: $value  !important;
+    padding-right: $value !important;
   }
 }
 

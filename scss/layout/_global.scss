@@ -1,0 +1,14 @@
+@use "../abstracts" as *;
+
+// Hide elements on size 
+.hide-desktop {
+  @include media(">=tablet") {
+    display: none;
+  }
+}
+
+.hide-mobile {
+  @include media("<tablet") {
+    display: none;
+  }
+}

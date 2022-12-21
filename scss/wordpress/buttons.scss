@@ -12,8 +12,8 @@ $button-border-width: 2px;
   appearance: none;
   padding: var(--wp--custom--content--button-input-padding, $button-padding) !important;
   transition: border-color 0.3s, color 0.3s, background-color 0.3s;
-  border: $button-border-width solid var(--wp--preset--color--primary);
-  border-radius: var(--wp--custom--default-border-radius, 0);
+  // border: $button-border-width solid var(--wp--preset--color--primary);
+  // border-radius: var(--wp--custom--default-border-radius, 0);
 
   &:focus,
   &:hover {
@@ -23,8 +23,6 @@ $button-border-width: 2px;
 
   // Outline / Transparent button
   .is-style-outline & {
-    background-color: transparent !important;
-    border: $button-border-width solid var(--wp--preset--color--dark) !important;
 
     &:focus,
     &:hover {
