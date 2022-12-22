@@ -40,12 +40,12 @@
   width: 100%;
 }
 
-// // Sidebar width
-// .edit-post-sidebar {
-//   @include media(">tablet") {
-//     width: 450px;
-//   }
-// }
+// Sidebar width
+.edit-post-sidebar {
+  @include media(">tablet") {
+    width: 380px; // width: 450px;
+  }
+}
 
 // // Remove width for Patter / ACF Blocks
 // // Wordpress 5.9 and down
