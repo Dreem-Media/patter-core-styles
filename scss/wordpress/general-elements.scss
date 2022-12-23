@@ -31,4 +31,14 @@
 
 .tile-as-button {
   cursor: pointer;
+
+  &--hide-inner-button {
+
+    .wp-block-button__link {
+      position: absolute;
+      left: -200em;
+      top: 0;
+      width: 0;
+    }
+  }
 }
