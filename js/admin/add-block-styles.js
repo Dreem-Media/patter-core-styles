@@ -6,6 +6,7 @@ wp.blocks.registerBlockStyle('core/heading', { name: 'larger', label: 'Larger te
 wp.blocks.registerBlockStyle('core/paragraph', { name: 'larger', label: 'Larger text' });
 
 // Paragraph "smaller" styles
+wp.blocks.registerBlockStyle('core/paragraph', { name: 'smaller', label: 'Smaller text' });
 wp.blocks.registerBlockStyle('core/paragraph', { name: 'smaller--sm', label: 'Smaller text on mobile' });
 
 // Columns no spacing 

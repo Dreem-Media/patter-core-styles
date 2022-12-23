@@ -19,18 +19,24 @@ p {
   }
 
   &.is-style-larger {
-    font-size: 125% !important;
+    font-size: 1.563rem !important;
 
     @include media("<phone") {
-      font-size: 115% !important;
+      font-size: 1.438rem !important;
     }
   }
 
-  &.is-style-smaller--sm {
-    @include media("<phone") {
-      font-size: var(--wp--preset--font-size--small) !important;
+  &.is-style-smaller {
+
+    font-size: var(--wp--preset--font-size--small) !important;
+
+    &--sm {
+      @include media("<phone") {
+        font-size: var(--wp--preset--font-size--small) !important;
+      }
     }
   }
+
 }
 
 
