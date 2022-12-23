@@ -19,10 +19,10 @@ p {
   }
 
   &.is-style-larger {
-    font-size: 1.563rem !important;
+    font-size: var(--wp--preset--font-size--large) !important;
 
     @include media("<phone") {
-      font-size: 1.438rem !important;
+      font-size: calc(var(--wp--preset--font-size--large) * 0.9) !important;
     }
   }
 
