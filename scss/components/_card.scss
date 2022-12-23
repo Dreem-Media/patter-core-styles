@@ -5,4 +5,8 @@
 .box--sticky {
   position: sticky;
   top: 20px;
+
+  .admin-bar & {
+    top: 52px;
+  }
 }
