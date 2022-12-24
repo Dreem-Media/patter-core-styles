@@ -17,6 +17,9 @@ Update `version` in package.json
 Add the following line into you main SCSS import
 `@use '@patter/patter-core-styles/scss/main';`
 
+If NO wordpress is going to be used:
+`@use '@patter/patter-core-styles/scss/independent-styles-setup';`
+
 If using animations:
 `@use '@patter/patter-core-styles/scss/aos-animations';`
 

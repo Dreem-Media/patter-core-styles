@@ -1,0 +1,29 @@
+// Colors
+$primary-color: #e51c3a !default;
+$secondary-color: #2a3140 !default;
+
+:root {
+  --wp--preset--color--primary: #{$primary-color};
+  --wp--preset--color--secondary: #{$secondary-color};
+}
+
+.has-primary-background-color {
+  background-color: var(--wp--preset--color--primary) !important;
+}
+
+.has-secondary-background-color {
+  background-color: var(--wp--preset--color--secondary) !important;
+}
+
+// Spacing
+$root-padding: 16px !default;
+
+:root {
+  --wp--style--root--padding-right: #{$root-padding};
+  --wp--style--root--padding-left: #{$root-padding};
+}
+
+.has-global-padding {
+  padding-right: var(--wp--style--root--padding-right);
+  padding-left: var(--wp--style--root--padding-left);
+}
