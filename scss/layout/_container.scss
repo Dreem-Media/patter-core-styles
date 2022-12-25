@@ -41,4 +41,10 @@ $content-width-thin: var(--wp--custom--layout--thin-size, 800px);
     padding-right: var(--wp--style--root--padding-right, 16px);
   }
 
+  // Patter blocks inside wrapper?
+  >.container>[class^="wp-block-patter"] {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
 }
