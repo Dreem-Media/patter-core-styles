@@ -31,7 +31,7 @@ form {
     padding: 0;
 
     // Required attributes
-    span {
+    span.required {
       color: var(--wp--custom--color--error);
     }
   }
