@@ -24,7 +24,6 @@ form {
   }
 
   label {
-    margin-right: 20px;
     display: inline-block;
     font-size: 1rem;
     font-weight: 700;
@@ -44,18 +43,14 @@ form {
     border: 1px solid var(--wp--custom--color--border);
     width: 100%;
     padding: $input-padding;
-    margin: 8px auto 5px;
-    font-size: inherit;
+    margin: 0;
+    font-size: var(--wp--preset--font-size--small, inherit);
+    font-family: Arial, Helvetica, sans-serif;
     z-index: 5;
     color: #000;
     border-radius: calc(var(--wp--custom--default-border-radius)/2);
     transition: border-color 0.3s, color 0.3s, background-color 0.3s;
     transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-
-    // &--lg {
-    //   padding: 30px;
-    //   font-size: 1.4rem;
-    // }
   }
 
   select {
@@ -77,6 +72,7 @@ form {
     margin-top: 0 !important;
     vertical-align: middle;
     margin-right: 12px;
+    cursor: pointer;
 
     &:focus {
       outline: none;
@@ -127,7 +123,6 @@ form {
   .gform_title {
     text-align: left;
     font-size: var(--wp--custom--typography--font-size--heading-3);
-    // margin-top: 16px;
   }
 
   // Taken care of by row spacing
