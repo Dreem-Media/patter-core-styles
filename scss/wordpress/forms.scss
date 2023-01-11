@@ -99,10 +99,6 @@ form {
   [type=submit] {
     appearance: none;
     cursor: pointer;
-    padding: $input-padding;
-    background-color: var(--wp--preset--color--primary);
-    border-radius: calc(var(--wp--custom--default-border-radius)/2);
-    font-size: var(--wp--preset--font-size--medium);
     transition: border-color 0.3s, color 0.3s, background-color 0.3s;
     border: $button-border-width solid var(--wp--preset--color--primary);
 
@@ -114,7 +110,11 @@ form {
   }
 
   [type=submit]:not(.wp-element-button) {
+    background-color: var(--wp--preset--color--primary);
+    border-radius: calc(var(--wp--custom--default-border-radius)/2);
     color: currentColor;
+    padding: $input-padding;
+    font-size: var(--wp--preset--font-size--medium);
   }
 
 }
