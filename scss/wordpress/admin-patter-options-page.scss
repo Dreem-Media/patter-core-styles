@@ -38,3 +38,10 @@
   }
 
 }
+
+// Overwrite for php error on menu
+
+.php-error #adminmenuback,
+.php-error #adminmenuwrap {
+  margin-top: 0;
+}
