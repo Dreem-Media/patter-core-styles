@@ -1,3 +1,5 @@
+@use "../abstracts" as *;
+
 $input-padding: var(--wp--custom--content--button-input-padding, 12px 16px) !default;
 
 // General Form Styles
@@ -115,6 +117,13 @@ form {
     color: currentColor;
     padding: $input-padding;
     font-size: var(--wp--preset--font-size--medium);
+
+    &:focus,
+    &:hover {
+      color: var(--wp--custom--color--primary-hover-text, currentColor);
+      border-color: var(--wp--custom--color--primary-hover);
+      background-color: var(--wp--custom--color--primary-hover);
+    }
   }
 
 }
@@ -143,7 +152,11 @@ form {
     }
 
     &--width-third {
-      grid-column: span 4
+      grid-column: span 4;
+
+      @include media("<phone") {
+        grid-column: span 12;
+      }
     }
 
     &--width-half {

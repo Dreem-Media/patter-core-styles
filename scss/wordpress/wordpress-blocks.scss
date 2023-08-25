@@ -102,3 +102,29 @@ p+.wp-block-buttons {
 .is-style-box-shadow {
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 }
+
+// Table block
+.wp-block-table {
+
+  table {
+    border-spacing: 4px;
+
+    thead {
+      th {
+        border: 1px solid var(--wp--preset--color--secondary, var(--wp--preset--color--dark, #000000));
+        background-color: var(--wp--preset--color--secondary, var(--wp--preset--color--dark, #000000));
+        color: var(--wp--preset--color--white, #ffffff);
+
+        // &:not(:last-child) {
+        //   border-right-color: red;
+        // }
+      }
+    }
+  }
+
+  &.is-style-separated {
+    table {
+      border-collapse: separate;
+    }
+  }
+}
