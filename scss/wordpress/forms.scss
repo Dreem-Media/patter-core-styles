@@ -114,7 +114,7 @@ form {
   [type=submit]:not(.wp-element-button) {
     background-color: var(--wp--preset--color--primary);
     border-radius: calc(var(--wp--custom--default-border-radius)/2);
-    color: currentColor;
+    color: var(--wp--custom--color--primary-text, currentColor);
     padding: $input-padding;
     font-size: var(--wp--preset--font-size--medium);
 
