@@ -1,6 +1,6 @@
 {
   "name": "@patter/patter-core-styles",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Core SCSS UI Kit",
   "main": "scss/main.scss",
   "scripts": {
