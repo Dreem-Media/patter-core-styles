@@ -48,6 +48,6 @@ $button-border-width: 2px;
 
   // Smaller button size, added via "Patter Gutenberg blocks" plugin
   .is-style-smaller-element & {
-    padding: calc(var(--wp--custom--content--button-input-padding-y) * 0.85) calc(var(--wp--custom--content--button-input-padding-x) * 0.85) !important;
+    padding: calc(var(--wp--custom--content--button-input-padding-y) * 0.85) calc(var(--wp--custom--content--button-input-padding-x) * 0.8) !important;
   }
 }
