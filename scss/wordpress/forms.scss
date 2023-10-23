@@ -1,6 +1,6 @@
 @use "../abstracts" as *;
 
-$input-padding: var(--wp--custom--content--button-input-padding, 12px 16px) !default;
+$input-padding: var(--wp--custom--content--button-input-padding-y, 12px) var(--wp--custom--content--button-input-padding-x, 16px) !default;
 
 // General Form Styles
 form {

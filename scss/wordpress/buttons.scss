@@ -2,7 +2,8 @@
  * Native Gutenberg Button Blocks
  */
 
-$button-padding: 22px 40px;
+$button-padding-y: 22px;
+$button-padding-x: 40px;
 $button-border-width: 2px;
 
 // .wp-element-button, - Also used, needed?
@@ -10,7 +11,7 @@ $button-border-width: 2px;
 .wp-block-button__link {
   // Most bits are defined by the native theme.json output
   appearance: none;
-  padding: var(--wp--custom--content--button-input-padding, $button-padding) !important;
+  padding: var(--wp--custom--content--button-input-padding-y, $button-padding-y) var(--wp--custom--content--button-input-padding-x, $button-padding-x) !important;
   transition: border-color 0.3s, color 0.3s, background-color 0.3s;
   // border: $button-border-width solid var(--wp--preset--color--primary);
   // border-radius: var(--wp--custom--default-border-radius, 0);
@@ -43,5 +44,10 @@ $button-border-width: 2px;
       border-color: var(--wp--custom--color--primary-hover) !important;
       background-color: var(--wp--custom--color--primary-hover) !important;
     }
+  }
+
+  // Smaller button size, added via "Patter Gutenberg blocks" plugin
+  .is-style-smaller-element & {
+    padding: calc(var(--wp--custom--content--button-input-padding-y) * 0.85) calc(var(--wp--custom--content--button-input-padding-x) * 0.85) !important;
   }
 }

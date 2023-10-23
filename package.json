@@ -1,7 +1,7 @@
 {
   "name": "@patter/patter-core-styles",
-  "version": "1.2.1",
-  "description": "Core SCSS UI Kit",
+  "version": "1.2.2",
+  "description": "Core Patter SCSS UI Kit",
   "main": "scss/main.scss",
   "scripts": {
     "publish-package": "npm publish --access public",
