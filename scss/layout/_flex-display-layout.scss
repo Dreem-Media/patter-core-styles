@@ -16,6 +16,12 @@
   }
 }
 
+.flex-and-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
 .flex-row {
   display: flex;
   gap: var(--wp--custom--content--gap, 40px);
@@ -38,6 +44,10 @@
 
 .align-items-center {
   align-items: center;
+}
+
+.align-items-start {
+  align-items: flex-start;
 }
 
 .align-content-start {

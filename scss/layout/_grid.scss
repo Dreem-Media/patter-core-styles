@@ -105,6 +105,20 @@
     }
   }
 
+  .is-style-smaller-gap {
+    .one_half {
+      flex-basis: 49.75%;
+    }
+
+    .one_third {
+      flex-basis: 33%
+    }
+
+    .one_fourth {
+      flex-basis: 24.625%
+    }
+  }
+
 }
 
 // 8% margin (not really for 4 cols)

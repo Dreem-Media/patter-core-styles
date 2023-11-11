@@ -68,11 +68,19 @@ h5 {
   }
 }
 
+.h1 {
+  font-size: var(--wp--custom--typography--font-size--heading-1);
+}
+
 h1.is-style-larger,
 .h1.is-style-larger {
   @include media(">=phone") {
     font-size: calc(var(--wp--custom--typography--font-size--heading-1) * 1.25) !important;
   }
+}
+
+.h2 {
+  font-size: var(--wp--custom--typography--font-size--heading-2);
 }
 
 h2.is-style-larger,
@@ -82,12 +90,24 @@ h2.is-style-larger,
   }
 }
 
+.h3 {
+  font-size: var(--wp--custom--typography--font-size--heading-3);
+}
+
 h3.is-style-larger,
 .h3.is-style-larger {
   @include media(">=phone") {
     font-size: var(--wp--custom--typography--font-size--heading-2) !important;
   }
 }
+
+h4.is-style-larger,
+.h4.is-style-larger {
+  @include media(">=phone") {
+    font-size: var(--wp--custom--typography--font-size--heading-3) !important;
+  }
+}
+
 
 .white-space-pre {
   white-space: pre;

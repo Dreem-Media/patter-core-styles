@@ -52,3 +52,17 @@
 // .wp-block[data-type^="acf"] {
 //   max-width: none !important;
 // }
+
+.editor-styles-wrapper {
+  .h1 {
+    font-size: var(--wp--custom--typography--font-size--heading-1);
+  }
+
+  .h2 {
+    font-size: var(--wp--custom--typography--font-size--heading-2);
+  }
+
+  .h3 {
+    font-size: var(--wp--custom--typography--font-size--heading-3);
+  }
+}
