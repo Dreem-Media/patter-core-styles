@@ -1,0 +1,48 @@
+@use "../abstracts" as *;
+
+.m-nav-style--overlay {
+
+  // Main nav
+  .m-nav {
+    opacity: 0;
+    bottom: 0px;
+    height: auto;
+    left: 0px;
+    position: fixed;
+    top: 102px; // Change per site
+    width: 100%;
+    visibility: hidden;
+    background-color: white;
+    padding-top: 12px;
+
+    // open behavior -  main nav
+    &.is-open {
+      opacity: 1;
+      z-index: 100;
+      visibility: visible;
+    }
+
+    .menu {
+      flex-direction: column;
+      align-items: start;
+      padding-right: var(--wp--style--root--padding-right);
+      padding-left: var(--wp--style--root--padding-left);
+      gap: 12px;
+    }
+
+    .sub-menu-wrap {
+      overflow: hidden;
+      transition: 0.3s all;
+      height: 0;
+    }
+  }
+
+  // open behavior - main app
+  &.m-nav-is-open {
+
+    main,
+    footer {
+      visibility: hidden;
+    }
+  }
+}

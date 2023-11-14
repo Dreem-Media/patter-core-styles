@@ -14,7 +14,7 @@ DOMReady(() => {
   function cleanUpClasses() {
     const main_menu_elements_subwrap = document.querySelectorAll(`.menu--main .sub-menu-wrap`);
     main_menu_elements_subwrap.forEach(el => { el.style.height = 0; });
-    const m_menu_elements_subwrap = document.querySelectorAll(`.m-nav-style--skew .sub-menu-wrap`);
+    const m_menu_elements_subwrap = document.querySelectorAll(`.m-nav-style--skew .sub-menu-wrap, .m-nav-style--overlay .sub-menu-wrap`);
     m_menu_elements_subwrap.forEach(el => { el.style.height = 0; });
     allNavs?.forEach(nav => {
       nav?.classList.remove(`has-${submenuActiveClass}`);
@@ -77,14 +77,16 @@ DOMReady(() => {
   });
 
 
-  // Mobile Menu, toggle height on skew
-  const mob_nav_links = document.querySelectorAll('.menu--main li.menu-item-has-children > a, .m-nav-style--skew .menu--mobile li.menu-item-has-children > a');
+  // Mobile Menu, toggle height on skew & overlay
+  const mob_nav_links = document.querySelectorAll('.menu--main li.menu-item-has-children > a, .m-nav-style--skew .menu--mobile li.menu-item-has-children > a, .m-nav-style--overlay .menu--mobile li.menu-item-has-children > a');
   mob_nav_links?.forEach(link => {
     link.addEventListener('click', (e) => {
       e.stopPropagation();
       e.preventDefault();
+      console.log('clicked')
       const subMenu = link.nextElementSibling;
       var subMenuContentInner = subMenu.children[0].offsetHeight;
+      console.log('subMenuContentInner', subMenuContentInner);
       if (subMenu.offsetHeight === 0) {
         subMenu.style.height = `${subMenuContentInner}px`;
       } else {
