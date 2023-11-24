@@ -83,10 +83,8 @@ DOMReady(() => {
     link.addEventListener('click', (e) => {
       e.stopPropagation();
       e.preventDefault();
-      console.log('clicked')
       const subMenu = link.nextElementSibling;
       var subMenuContentInner = subMenu.children[0].offsetHeight;
-      console.log('subMenuContentInner', subMenuContentInner);
       if (subMenu.offsetHeight === 0) {
         subMenu.style.height = `${subMenuContentInner}px`;
       } else {
