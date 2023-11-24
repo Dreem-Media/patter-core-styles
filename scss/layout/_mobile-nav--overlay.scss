@@ -40,6 +40,8 @@
   // open behavior - main app
   &.m-nav-is-open {
 
+    overflow: hidden;
+
     main,
     footer {
       visibility: hidden;
