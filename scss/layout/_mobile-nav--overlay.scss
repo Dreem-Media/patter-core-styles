@@ -9,11 +9,12 @@
     height: auto;
     left: 0px;
     position: fixed;
-    top: 102px; // Change per site
+    top: var(--patter--m-nav--overlay-top, 102px); // Change per site
     width: 100%;
     visibility: hidden;
     background-color: white;
     padding-top: 12px;
+    overflow-y: auto;
 
     // open behavior -  main nav
     &.is-open {
@@ -43,8 +44,9 @@
     overflow: hidden;
 
     main,
-    footer {
-      visibility: hidden;
+    footer,
+    aside.site-copyright {
+      display: none;
     }
   }
 }

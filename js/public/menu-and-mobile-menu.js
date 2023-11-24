@@ -1,22 +1,30 @@
 import { DOMReady } from "./_utils";
 
 DOMReady(() => {
-
-  const burger = document.getElementById('burger'),
-    mobileNav = document.getElementById('m-nav'),
+  const burger = document.getElementById("burger"),
+    mobileNav = document.getElementById("m-nav"),
     body = document.body,
     pageTopWrapper = document.getElementById("top"),
-    nav_links = document.querySelectorAll('li.menu-item-has-children > a:first-child'),
+    nav_links = document.querySelectorAll(
+      "li.menu-item-has-children > a:first-child"
+    ),
     allNavs = document.querySelectorAll("nav"),
-
-    submenuActiveClass = 'submenu-active';
+    submenuActiveClass = "submenu-active";
 
   function cleanUpClasses() {
-    const main_menu_elements_subwrap = document.querySelectorAll(`.menu--main .sub-menu-wrap`);
-    main_menu_elements_subwrap.forEach(el => { el.style.height = 0; });
-    const m_menu_elements_subwrap = document.querySelectorAll(`.m-nav-style--skew .sub-menu-wrap, .m-nav-style--overlay .sub-menu-wrap`);
-    m_menu_elements_subwrap.forEach(el => { el.style.height = 0; });
-    allNavs?.forEach(nav => {
+    const main_menu_elements_subwrap = document.querySelectorAll(
+      `.menu--main .sub-menu-wrap`
+    );
+    main_menu_elements_subwrap.forEach((el) => {
+      el.style.height = 0;
+    });
+    const m_menu_elements_subwrap = document.querySelectorAll(
+      `.m-nav-style--skew .sub-menu-wrap, .m-nav-style--overlay .sub-menu-wrap`
+    );
+    m_menu_elements_subwrap.forEach((el) => {
+      el.style.height = 0;
+    });
+    allNavs?.forEach((nav) => {
       nav?.classList.remove(`has-${submenuActiveClass}`);
     });
     nav_links.forEach((link) =>
@@ -25,20 +33,19 @@ DOMReady(() => {
   }
 
   // Reset on body click
-  pageTopWrapper.addEventListener('click', cleanUpClasses);
+  pageTopWrapper.addEventListener("click", cleanUpClasses);
 
-
-  // Mobile menu toggle open/close 
-  burger?.addEventListener('click', function (e) {
+  // Mobile menu toggle open/close
+  burger?.addEventListener("click", function (e) {
     e.stopPropagation();
     e.preventDefault();
 
-    this.classList.toggle('is-open');
-    mobileNav?.classList.toggle('is-open');
-    body.classList.toggle('m-nav-is-open');
+    this.classList.toggle("is-open");
+    mobileNav?.classList.toggle("is-open");
+    body.classList.toggle("m-nav-is-open");
 
-    if (mobileNav?.classList.contains('is-open')) {
-      const mobileMenuLinks = mobileNav.getElementsByTagName('a');
+    if (mobileNav?.classList.contains("is-open")) {
+      const mobileMenuLinks = mobileNav.getElementsByTagName("a");
       if (mobileMenuLinks.length) {
         setTimeout(() => mobileMenuLinks[0].focus(), 200);
       }
@@ -48,39 +55,36 @@ DOMReady(() => {
     }
   });
 
-
   // Close mobile menu if main wrapper is clicked.
-  pageTopWrapper?.addEventListener('click', function (e) {
-    if (mobileNav.classList.contains('is-open')) {
+  pageTopWrapper?.addEventListener("click", function (e) {
+    if (mobileNav.classList.contains("is-open")) {
       e.stopPropagation();
       e.preventDefault();
       burger.dispatchEvent(new Event("click"));
     }
   });
 
-
   // All menus - Submenu Toggle
-  nav_links?.forEach(link => {
-
-    link.addEventListener('click', (e) => {
+  nav_links?.forEach((link) => {
+    link.addEventListener("click", (e) => {
       e.stopPropagation();
       e.preventDefault();
 
-      // Remove existing classes 
+      // Remove existing classes
       cleanUpClasses();
 
-      const wrapperNav = link.closest('nav');
+      const wrapperNav = link.closest("nav");
       wrapperNav?.classList.add(`has-${submenuActiveClass}`);
       link.parentNode?.classList.toggle(submenuActiveClass);
     });
-
   });
 
-
   // Mobile Menu, toggle height on skew & overlay
-  const mob_nav_links = document.querySelectorAll('.menu--main li.menu-item-has-children > a, .m-nav-style--skew .menu--mobile li.menu-item-has-children > a, .m-nav-style--overlay .menu--mobile li.menu-item-has-children > a');
-  mob_nav_links?.forEach(link => {
-    link.addEventListener('click', (e) => {
+  const mob_nav_links = document.querySelectorAll(
+    ".menu--main li.menu-item-has-children > a, .m-nav-style--skew .menu--mobile li.menu-item-has-children > a, .m-nav-style--overlay .menu--mobile li.menu-item-has-children > a"
+  );
+  mob_nav_links?.forEach((link) => {
+    link.addEventListener("click", (e) => {
       e.stopPropagation();
       e.preventDefault();
       const subMenu = link.nextElementSibling;
@@ -94,31 +98,31 @@ DOMReady(() => {
   });
 
   // Appends extras to menu, on slide menu
-  if (body.classList.contains('m-nav-style--slide')) {
-
+  if (body.classList.contains("m-nav-style--slide")) {
     // Close button
     const closeButton = document.createElement("button");
-    closeButton.className = 'close-menu';
-    closeButton.innerText = 'Close';
+    closeButton.className = "close-menu";
+    closeButton.innerText = "Close";
 
-    closeButton.addEventListener('click', function (e) {
+    closeButton.addEventListener("click", function (e) {
       burger.dispatchEvent(new Event("click"));
     });
 
     mobileNav.appendChild(closeButton);
 
     // Go back
-    const subMenus = mobileNav.querySelectorAll('.sub-menu-wrap .sub-menu');
-    subMenus.forEach(subMenu => {
-
+    const subMenus = mobileNav.querySelectorAll(".sub-menu-wrap .sub-menu");
+    subMenus.forEach((subMenu) => {
       const goBackButtonWrap = document.createElement("li");
-      goBackButtonWrap.className = 'gobacktoprevious';
+      goBackButtonWrap.className = "gobacktoprevious";
 
       const goBackButton = document.createElement("a");
-      goBackButton.innerText = '< Back';
+      goBackButton.innerText = "< Back";
 
-      goBackButton.addEventListener('click', function (e) {
-        this.parentNode.parentNode.parentNode.parentNode.classList.remove(submenuActiveClass);
+      goBackButton.addEventListener("click", function (e) {
+        this.parentNode.parentNode.parentNode.parentNode.classList.remove(
+          submenuActiveClass
+        );
       });
 
       goBackButtonWrap.appendChild(goBackButton);
@@ -126,5 +130,31 @@ DOMReady(() => {
       subMenu.insertBefore(goBackButtonWrap, subMenu.firstChild);
     });
   }
+});
 
+DOMReady(() => {
+  function setOverlayTopHeight() {
+    let totalHeight = 0;
+    const elements = [
+      ".widget-area--site-wide-banner",
+      "header.header",
+      ".header__main_nav__mobile",
+    ];
+
+    elements.forEach((selector) => {
+      const element = document.querySelector(selector);
+      if (element) {
+        totalHeight += element.offsetHeight;
+      }
+    });
+
+    document.documentElement.style.setProperty(
+      "--patter--m-nav--overlay-top",
+      `${totalHeight}px`
+    );
+  }
+
+  // Run the function on page load and whenever the layout might change
+  window.onload = setOverlayTopHeight;
+  window.onresize = setOverlayTopHeight;
 });
