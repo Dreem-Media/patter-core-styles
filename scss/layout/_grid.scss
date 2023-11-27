@@ -16,6 +16,7 @@
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
   gap: calc(var(--wp--custom--content--gap, 40px) / 2);
+  grid-auto-rows: 1fr; // Make all rows same height
 
   @include media(">=phone") {
     gap: var(--wp--custom--content--gap, 40px);

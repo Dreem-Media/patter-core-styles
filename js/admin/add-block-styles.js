@@ -15,6 +15,7 @@ registerBlockStyle("core/paragraph", { name: "smaller--sm", label: "Smaller text
 
 // Columns no spacing
 registerBlockStyle("core/columns", { name: "no-gap", label: "Remove column gap" });
+registerBlockStyle("core/columns", { name: "smaller-gap", label: "Smaller column gap", });
 registerBlockStyle("core/columns", { name: "larger-gap", label: "Larger column gap", });
 
 // Group
