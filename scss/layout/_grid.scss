@@ -1,11 +1,69 @@
 @use "../abstracts" as *;
 
-//============
+
+
+
+//==================
 // Grid
-//============
+//==================
+
+// .grid-list controls the column widths unlike .flex-and-wrap-justify
+
+// .grid-list--col-2
+
+.grid-list {
+
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: calc(var(--wp--custom--content--gap, 40px) / 2);
+
+  @include media(">=phone") {
+    gap: var(--wp--custom--content--gap, 40px);
+  }
+
+  // TODO: gap styles not implemented anywhere yet except 50/50 gutenburg block. 27/11/2023
+  &.is-style-no-gap {
+    gap: 0;
+  }
+
+  &.is-style-smaller-gap {
+    @include media(">=phone") {
+      gap: calc(var(--wp--custom--content--gap, 40px) / 2);
+    }
+  }
+
+  &.is-style-larger-gap {
+    @include media(">=phone") {
+      gap: calc(var(--wp--custom--content--gap, 40px) * 2) !important;
+    }
+  }
+
+  @include media(">=phone") {
+    &--col-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    &--col-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    &--col-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    &--col-5 {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+  }
+}
+
+
+//==================
+// Grid (Using Flex)
+//==================
 
 // FLEX COLUMNS 
-// Wrap with flex-and-wrap-justify
+// Wrap with .flex-and-wrap-justify
 
 .full_width {
   flex-basis: 100%;
@@ -28,7 +86,7 @@
   .one_half {
     flex-basis: 48%;
 
-    .large_col & {
+    .is-style-larger-gap & {
       flex-basis: 46%
     }
 
@@ -50,7 +108,7 @@
   .one_fourth {
     flex-basis: 22%;
 
-    .large_col & {
+    .is-style-larger-gap & {
       flex-basis: 19%;
     }
   }
@@ -58,7 +116,7 @@
   .three_fourth {
     flex-basis: 74%;
 
-    .large_col & {
+    .is-style-larger-gap & {
       flex-basis: 73%;
     }
   }
@@ -67,7 +125,7 @@
   .one_third {
     flex-basis: 30.66%;
 
-    .large_col & {
+    .is-style-larger-gap & {
       flex-basis: 28%;
     }
   }
@@ -75,7 +133,7 @@
   .two_third {
     flex-basis: 65.33%;
 
-    .large_col & {
+    .is-style-larger-gap & {
       flex-basis: 64%;
     }
   }
@@ -84,7 +142,7 @@
   .one_fifth {
     flex-basis: 16.8%;
 
-    .large_col & {
+    .is-style-larger-gap & {
       flex-basis: 13.6%;
     }
   }
@@ -92,7 +150,7 @@
   .two_fifth {
     flex-basis: 37.6%;
 
-    .large_col & {
+    .is-style-larger-gap & {
       flex-basis: 35.2%;
     }
   }
@@ -100,7 +158,7 @@
   .three_fifth {
     flex-basis: 58.4%;
 
-    .large_col & {
+    .is-style-larger-gap & {
       flex-basis: 56.8%;
     }
   }
@@ -147,24 +205,3 @@
 // .span_1_of_4 { width: 23.5%
 // .span_2_of_3 { width: 66%;
 // .span_1_of_3 { width: 32%;
-
-
-// GRID COLUMNS 
-
-// .grid_four_col {
-//   display: grid;
-//   grid-template-columns: repeat(4, 1fr);
-//   grid-column-gap: 2%;
-// }
-
-// .grid_three_col {
-//   display: grid;
-//   grid-template-columns: repeat(3, 1fr);
-//   grid-column-gap: 2%;
-// }
-
-// .grid_two_col {
-//   display: grid;
-//   grid-template-columns: repeat(2, 1fr);
-//   grid-column-gap: 2%;
-// }

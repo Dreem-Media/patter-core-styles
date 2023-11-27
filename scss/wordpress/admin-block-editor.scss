@@ -40,6 +40,12 @@
   width: 100%;
 }
 
+.components-base-control.components-range-control {
+  .components-base-control {
+    width: initial;
+  }
+}
+
 // Sidebar width
 .edit-post-sidebar {
   @include media(">tablet") {
