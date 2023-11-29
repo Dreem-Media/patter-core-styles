@@ -16,15 +16,19 @@
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
   gap: calc(var(--wp--custom--content--gap, 40px) / 2);
-  grid-auto-rows: 1fr; // Make all rows same height
 
   @include media(">=phone") {
     gap: var(--wp--custom--content--gap, 40px);
+    grid-auto-rows: 1fr; // Make all rows same height
   }
 
   // TODO: gap styles not implemented anywhere yet except 50/50 gutenburg block. 27/11/2023
   &.is-style-no-gap {
     gap: 0;
+  }
+
+  &.is-style-tiny-gap {
+    gap: 4px !important;
   }
 
   &.is-style-smaller-gap {
