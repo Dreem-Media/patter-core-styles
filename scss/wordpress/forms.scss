@@ -124,6 +124,15 @@ form {
       border-color: var(--wp--custom--color--primary-hover);
       background-color: var(--wp--custom--color--primary-hover);
     }
+
+    &:disabled,
+    &.disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+      background-color: var(--wp--preset--color--dark);
+      border-color: var(--wp--preset--color--dark);
+    }
+
   }
 
 }
