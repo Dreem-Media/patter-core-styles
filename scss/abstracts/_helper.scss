@@ -1,8 +1,74 @@
 @use "./index" as helper;
 
-@use "sass:math";
+// Root vars
+:root {
+
+  @each $label,
+  $value in helper.$spacing {
+    --space--#{$label}: #{$value};
+  }
+}
 
 // Spacing
+@each $label,
+$value in helper.$spacing {
+
+  // Margin
+  .m-#{$label} {
+    margin: var(--space--#{$label}) !important;
+  }
+
+  .mt-#{$label},
+  .my-#{$label} {
+    margin-top: var(--space--#{$label}) !important;
+  }
+
+  .mb-#{$label},
+  .my-#{$label} {
+    margin-bottom: var(--space--#{$label}) !important;
+  }
+
+  .ml-#{$label},
+  .mx-#{$label} {
+    margin-left: var(--space--#{$label}) !important;
+  }
+
+  .mr-#{$label},
+  .mx-#{$label} {
+    margin-right: var(--space--#{$label}) !important;
+  }
+
+  // Padding
+  .p-#{$label} {
+    padding: var(--space--#{$label}) !important;
+
+    &--lg {
+      @include helper.media(">=desktop") {
+        padding: var(--space--#{$label}) !important;
+      }
+    }
+  }
+
+  .pt-#{$label},
+  .py-#{$label} {
+    padding-top: var(--space--#{$label}) !important;
+  }
+
+  .pb-#{$label},
+  .py-#{$label} {
+    padding-bottom: var(--space--#{$label}) !important;
+  }
+
+  .pl-#{$label},
+  .px-#{$label} {
+    padding-left: var(--space--#{$label}) !important;
+  }
+
+  .pr-#{$label},
+  .px-#{$label} {
+    padding-right: var(--space--#{$label}) !important;
+  }
+}
 
 .ml-auto {
   margin-left: auto !important;
@@ -12,59 +78,6 @@
   margin-right: auto !important;
 }
 
-@each $label,
-$value in helper.$spacing {
-
-  // Margin
-  .m-#{$label} {
-    margin: #{$value} !important;
-  }
-
-  .mt-#{$label},
-  .my-#{$label} {
-    margin-top: $value !important;
-  }
-
-  .mb-#{$label},
-  .my-#{$label} {
-    margin-bottom: $value !important;
-  }
-
-  .ml-#{$label},
-  .mx-#{$label} {
-    margin-left: $value !important;
-  }
-
-  .mr-#{$label},
-  .mx-#{$label} {
-    margin-right: $value !important;
-  }
-
-  // Padding
-  .p-#{$label} {
-    padding: #{$value} !important;
-  }
-
-  .pt-#{$label},
-  .py-#{$label} {
-    padding-top: $value !important;
-  }
-
-  .pb-#{$label},
-  .py-#{$label} {
-    padding-bottom: $value !important;
-  }
-
-  .pl-#{$label},
-  .px-#{$label} {
-    padding-left: $value !important;
-  }
-
-  .pr-#{$label},
-  .px-#{$label} {
-    padding-right: $value !important;
-  }
-}
 
 
 
