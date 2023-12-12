@@ -2,18 +2,14 @@
  * Native Gutenberg Button Blocks
  */
 
-$button-padding-y: 22px;
-$button-padding-x: 40px;
-$button-border-width: 2px;
-
 // .wp-element-button, - Also used, needed?
 
 .wp-block-button__link {
   // Most bits are defined by the native theme.json output
   appearance: none;
-  padding: var(--wp--custom--content--button-input-padding-y, $button-padding-y) var(--wp--custom--content--button-input-padding-x, $button-padding-x) !important;
+  padding: var(--wp--custom--content--button-input-padding-y, 20px) var(--wp--custom--content--button-input-padding-x, 40px) !important;
   transition: border-color 0.3s, color 0.3s, background-color 0.3s;
-  // border: $button-border-width solid var(--wp--preset--color--primary);
+  // border: 2px solid var(--wp--preset--color--primary);
   // border-radius: var(--wp--custom--default-border-radius, 0);
 
   &:focus,
@@ -22,13 +18,13 @@ $button-border-width: 2px;
     background-color: var(--wp--custom--color--primary-hover);
   }
 
-  // Outline / Transparent button
+  // Outline / Transparent button (default style set through guttenburg)
   .is-style-outline & {
 
     &:focus,
     &:hover {
       border-color: var(--wp--custom--color--primary-hover) !important;
-      color: var(--wp--preset--color--light) !important;
+      color: var(--wp--custom--color--primary-text) !important;
       background-color: var(--wp--custom--color--primary-hover) !important;
     }
   }
@@ -36,12 +32,26 @@ $button-border-width: 2px;
   // Dark button
   .is-style-dark-button & {
     background-color: var(--wp--preset--color--dark) !important;
-    color: var(--wp--preset--color--light) !important;
+    color: var(--wp--custom--color--primary-text) !important;
     border-color: var(--wp--preset--color--dark) !important;
 
     &:focus,
     &:hover {
       border-color: var(--wp--custom--color--primary-hover) !important;
+      background-color: var(--wp--custom--color--primary-hover) !important;
+    }
+  }
+
+  // White button
+  .is-style-white-button & {
+    background-color: var(--wp--preset--color--white) !important;
+    color: var(--wp--preset--color--dark) !important;
+    border-color: var(--wp--preset--color--dark) !important;
+
+    &:focus,
+    &:hover {
+      border-color: var(--wp--custom--color--primary-hover) !important;
+      color: var(--wp--custom--color--primary-text) !important;
       background-color: var(--wp--custom--color--primary-hover) !important;
     }
   }
