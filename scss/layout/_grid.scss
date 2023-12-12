@@ -10,6 +10,7 @@
 // .grid-list controls the column widths unlike .flex-and-wrap-justify
 
 // .grid-list--col-2
+// .grid-list--col-2--sm
 
 .grid-list {
 
@@ -41,6 +42,10 @@
     @include media(">=phone") {
       gap: calc(var(--wp--custom--content--gap, 40px) * 2) !important;
     }
+  }
+
+  &--col-2--sm {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   @include media(">=phone") {
