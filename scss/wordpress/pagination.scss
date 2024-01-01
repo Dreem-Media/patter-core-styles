@@ -1,29 +1,71 @@
+.woocommerce-pagination,
 .pagination {
+
+  .page-numbers {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    border: none;
+    margin: 1px;
+    background: none;
+    color: var(--wp--preset--color--black);
+    list-style: none;
+  }
+
   a {
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    min-height: 40px;
+    padding: 0.5rem 0.75rem;
     text-decoration: none;
 
     &:hover,
     &:focus {
-      text-decoration: underline;
+      color: black;
+      opacity: 0.8;
+    }
+  }
+
+  span {
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    min-height: 40px;
+    padding: 0.5rem 0.75rem;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: black;
+      opacity: 0.8;
+    }
+
+    &.current {
+      color: var(--wp--preset--color--white);
+      background-color: black;
+      border-radius: 3px;
+      padding: 0.5rem 0.75rem;
+      margin: 0;
     }
   }
 }
 
-.page-numbers {
-  background: var(--wp--preset--color--primary);
-  padding: 6px 12px;
-  border-radius: var(--wp--custom--default-border-radius, 2px);
-  color: white;
-  margin: 0 4px;
-  display: inline-block;
-
-  &.current {
-    font-weight: bold;
-    opacity: 0.8;
+.pagination {
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    text-align: center;
   }
+}
 
-  &:hover,
-  &:focus {
-    color: white;
-  }
+// Woo specific 
+.woocommerce-pagination {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
 }
