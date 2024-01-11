@@ -57,7 +57,7 @@ DOMReady(() => {
 
   // Close mobile menu if main wrapper is clicked.
   pageTopWrapper?.addEventListener("click", function (e) {
-    if (mobileNav.classList.contains("is-open")) {
+    if (mobileNav?.classList.contains("is-open")) {
       e.stopPropagation();
       e.preventDefault();
       burger.dispatchEvent(new Event("click"));
