@@ -60,4 +60,13 @@
   .is-style-smaller-element & {
     padding: calc(var(--wp--custom--content--button-input-padding-y) * 0.85) calc(var(--wp--custom--content--button-input-padding-x) * 0.8) !important;
   }
+
+  &:disabled,
+  &.disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    background-color: var(--wp--preset--color--dark);
+    border-color: var(--wp--preset--color--dark);
+    pointer-events: none;
+  }
 }
