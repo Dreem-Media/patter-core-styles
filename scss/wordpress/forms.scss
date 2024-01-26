@@ -173,6 +173,10 @@ form {
       grid-column: span 6;
     }
 
+    &--width-third {
+      grid-column: span 4;
+    }
+
     &--width-full {
       grid-column: span 12;
     }
