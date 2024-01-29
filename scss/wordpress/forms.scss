@@ -169,12 +169,16 @@ form {
       }
     }
 
-    &--width-half {
-      grid-column: span 6;
+    &--width-two-third {
+      grid-column: span 8;
+
+      @include media("<phone") {
+        grid-column: span 12;
+      }
     }
 
-    &--width-third {
-      grid-column: span 4;
+    &--width-half {
+      grid-column: span 6;
     }
 
     &--width-full {
