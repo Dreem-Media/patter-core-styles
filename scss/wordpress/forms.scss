@@ -162,18 +162,14 @@ form {
     }
 
     &--width-third {
-      grid-column: span 4;
-
-      @include media("<phone") {
-        grid-column: span 12;
+      @include media(">=phone") {
+        grid-column: span 4;
       }
     }
 
     &--width-two-third {
-      grid-column: span 8;
-
-      @include media("<phone") {
-        grid-column: span 12;
+      @include media(">=phone") {
+        grid-column: span 8;
       }
     }
 
