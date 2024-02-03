@@ -65,6 +65,10 @@ p+.wp-block-buttons {
 .wp-block-group,
 .wp-block-group.is-layout-flex {
   gap: calc(var(--wp--custom--content--gap, 40px) / 2) !important;
+
+  &.is-style-center--sm {
+    justify-content: center;
+  }
 }
 
 // Gallery

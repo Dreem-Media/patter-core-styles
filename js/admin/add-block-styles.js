@@ -21,6 +21,7 @@ registerBlockStyle("core/columns", { name: "larger-gap", label: "Larger column g
 
 // Group
 registerBlockStyle("core/group", { name: "rounded", label: "Rounded corners" });
+registerBlockStyle("core/group", { name: "center--sm", label: "Center on mobile" });
 
 // Cover, rounded corners
 registerBlockStyle("core/cover", { name: "rounded", label: "Rounded corners" });
