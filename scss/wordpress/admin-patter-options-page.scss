@@ -40,12 +40,18 @@
       padding-bottom: 12px;
     }
 
+    .nav-tab-wrapper {
+      border-bottom-color: #dcdcde;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
   }
 
 }
 
 // Overwrite for php error on menu
-
 .php-error #adminmenuback,
 .php-error #adminmenuwrap {
   margin-top: 0;
