@@ -38,6 +38,11 @@
     h2 {
       border-bottom: 1px solid #dcdcde;
       padding-bottom: 12px;
+      margin-top: 40px;
+
+      &:first-child {
+        margin-top: 0;
+      }
     }
 
     .nav-tab-wrapper {
