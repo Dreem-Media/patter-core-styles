@@ -6,7 +6,11 @@
 
 // Image
 .wp-block-image {
-  margin-bottom: 0 !important;
+  margin-bottom: 0;
+}
+
+p+.wp-block-image {
+  margin-block-start: 1.5rem;
 }
 
 // Embeds
@@ -23,7 +27,7 @@
 }
 
 p+.wp-block-buttons {
-  margin-top: 20px;
+  margin-block-start: 1.5rem;
 }
 
 // Columns
