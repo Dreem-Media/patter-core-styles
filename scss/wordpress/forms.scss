@@ -165,6 +165,18 @@ form {
       display: none;
     }
 
+    &--width-quarter {
+      @include media(">=phone") {
+        grid-column: span 3;
+      }
+    }
+
+    &--width-three-quarters {
+      @include media(">=phone") {
+        grid-column: span 9;
+      }
+    }
+
     &--width-third {
       @include media(">=phone") {
         grid-column: span 4;
