@@ -3,7 +3,7 @@
 //============
 
 .reset-ul,
-.menu {
+.menu:not(.ui-sortable) {
   margin: 0;
   padding: 0;
 
