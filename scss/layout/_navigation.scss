@@ -3,7 +3,7 @@
 //============
 
 .reset-ul,
-.menu:not(.ui-sortable) {
+.menu:where(:not(.ui-sortable)) {
   margin: 0;
   padding: 0;
 
