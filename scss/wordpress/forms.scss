@@ -55,7 +55,7 @@ form {
     transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
   }
 
-  input,
+  input:where(:not([type="button"], [type="checkbox"], [type="file"], [type="image"], [type="radio"], [type="reset"], [type="submit"])),
   textarea {
     &:read-only {
       opacity: 0.65;
