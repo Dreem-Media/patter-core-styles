@@ -223,6 +223,10 @@ form {
     margin-inline: calc(var(--gf-field-gap-x)* -1 / 2);
     row-gap: var(--gf-field-gap-y);
     align-items: flex-end;
+
+    @include media(">=phone") {
+      flex-flow: row;
+    }
   }
 
   .gform-grid-col {
