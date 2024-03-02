@@ -147,6 +147,8 @@ form {
 // Gravity Form Styles
 
 .gform_wrapper {
+  --gf-field-gap-x: 12px;
+  --gf-field-gap-y: 12px;
 
   .gform_title {
     text-align: left;
@@ -159,8 +161,14 @@ form {
     margin: 0 !important;
   }
 
+  fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
   .gfield {
-    margin-bottom: 12px;
+    margin-bottom: var(--gf-field-gap-y);
     grid-column: 1 #{"/"} -1;
     min-width: 0;
 
@@ -207,6 +215,39 @@ form {
     }
   }
 
+
+  // Internal Field Grid
+  .gform-grid-row {
+    display: flex;
+    flex-flow: row wrap;
+    margin-inline: calc(var(--gf-field-gap-x)* -1 / 2);
+    row-gap: var(--gf-field-gap-y);
+    align-items: flex-end;
+  }
+
+  .gform-grid-col {
+    inline-size: 100%;
+    padding-inline: calc(var(--gf-field-gap-x) / 2);
+  }
+
+  // Labels and Required Fields
+  // Main label
+  .gfield_label.gform-field-label {
+    float: none;
+    font-size: var(--wp--preset--font-size--medium);
+  }
+
+  // All labels
+  .gform-field-label {
+    margin-bottom: calc(var(--gf-field-gap-y) / 2);
+  }
+
+  .gform-field-label--type-sub,
+  .gfield_description {
+    margin-bottom: calc(var(--gf-field-gap-y) / 2);
+    font-size: var(--wp--preset--font-size--small);
+  }
+
   .hidden_label {
     label {
       // Move SR Only? 
@@ -227,7 +268,7 @@ form {
   .gfield_required {
     color: var(--wp--custom--color--error);
     font-size: small;
-    margin-left: 3px;
+    margin-left: calc(var(--gf-field-gap-x) / 2);
     font-weight: normal;
     font-style: italic;
   }
@@ -302,10 +343,6 @@ form {
 .gform_confirmation_wrapper {
   border-top: 1px solid var(--wp--preset--color--primary);
   border-bottom: 1px solid var(--wp--preset--color--primary);
-  // background: #fff9f9;
-  // border: 1px solid var(--wp--preset--color--primary);
-  // border-radius: calc(var(--wp--custom--default-border-radius)/2);
-  // box-shadow: 0 1px 4px rgb(0 0 0 / 11%), 0 0 4px rgb(18 25 97 / 4%);
   padding: 8px 16px;
   margin: 8px 0 16px;
   position: relative;
