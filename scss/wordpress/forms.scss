@@ -146,8 +146,11 @@ form:where(:not(.wc-block-components-form)) {
 }
 
 // Gravity Form Styles
+$containMaxWidth: 600px;
 
 .gform_wrapper {
+  container: gFormContainer / inline-size;
+
   --gf-field-gap-x: 12px;
   --gf-field-gap-y: 12px;
 
@@ -181,11 +184,19 @@ form:where(:not(.wc-block-components-form)) {
       @include media(">=phone") {
         grid-column: span 2;
       }
+
+      @container gFormContainer (max-width: $containMaxWidth) {
+        grid-column: span 12;
+      }
     }
 
     &--width-quarter {
       @include media(">=phone") {
         grid-column: span 3;
+      }
+
+      @container gFormContainer (max-width: $containMaxWidth) {
+        grid-column: span 12;
       }
     }
 
@@ -193,17 +204,29 @@ form:where(:not(.wc-block-components-form)) {
       @include media(">=phone") {
         grid-column: span 9;
       }
+
+      @container gFormContainer (max-width: $containMaxWidth) {
+        grid-column: span 12;
+      }
     }
 
     &--width-third {
       @include media(">=phone") {
         grid-column: span 4;
       }
+
+      @container gFormContainer (max-width: $containMaxWidth) {
+        grid-column: span 12;
+      }
     }
 
     &--width-two-third {
       @include media(">=phone") {
         grid-column: span 8;
+      }
+
+      @container gFormContainer (max-width: $containMaxWidth) {
+        grid-column: span 12;
       }
     }
 
