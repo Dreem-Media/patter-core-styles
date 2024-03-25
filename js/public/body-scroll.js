@@ -2,8 +2,10 @@ import { DOMReady } from "./_utils";
 
 // Remove chrome scroll remember position
 if ('scrollRestoration' in history) {
-  // Back off, browser, I got this...
-  history.scrollRestoration = 'manual';
+  if (document.body?.classList.contains('scroll-history-manual')) {
+    // Back off, browser, I got this...
+    history.scrollRestoration = 'manual';
+  }
 }
 
 DOMReady(() => {
