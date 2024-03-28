@@ -74,6 +74,7 @@
 }
 
 // Random bug with theme page buttons not displaying correctly
-.theme-browser .theme.active .theme-name {
+.theme-id-container,
+.theme-browser .theme .theme-name {
   box-sizing: unset;
 }
