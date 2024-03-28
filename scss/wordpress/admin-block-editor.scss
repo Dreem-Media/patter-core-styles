@@ -72,3 +72,8 @@
     font-size: var(--wp--custom--typography--font-size--heading-3);
   }
 }
+
+// Random bug with theme page buttons not displaying correctly
+.theme-browser .theme.active .theme-name {
+  box-sizing: unset;
+}
