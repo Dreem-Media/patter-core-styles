@@ -3,12 +3,12 @@
 // Hide elements on size 
 .hide-desktop {
   @include media(">=tablet") {
-    display: none;
+    display: none !important;
   }
 }
 
 .hide-mobile {
   @include media("<tablet") {
-    display: none;
+    display: none !important;
   }
 }

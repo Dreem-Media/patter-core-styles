@@ -13,7 +13,6 @@
 // .grid-list--col-2--sm
 
 .grid-list {
-
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
   gap: calc(var(--wp--custom--content--gap, 40px) / 2);
@@ -23,7 +22,6 @@
     grid-auto-rows: 1fr; // Make all rows same height
   }
 
-  // TODO: gap styles not implemented anywhere yet except 50/50 gutenburg block. 27/11/2023
   &.is-style-no-gap {
     gap: 0;
   }
@@ -51,19 +49,39 @@
   @include media(">=phone") {
     &--col-2 {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      .full_width {
+        grid-column: span 2 !important;
+      }
     }
 
     &--col-3 {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+
+      .full_width {
+        grid-column: span 3 !important;
+      }
     }
 
     &--col-4 {
       grid-template-columns: repeat(4, minmax(0, 1fr));
+
+      .full_width {
+        grid-column: span 4 !important;
+      }
     }
 
     &--col-5 {
       grid-template-columns: repeat(5, minmax(0, 1fr));
+
+      .full_width {
+        grid-column: span 5 !important;
+      }
     }
+  }
+
+  .full_width {
+    grid-column: span 1; // Default for single column
   }
 }
 

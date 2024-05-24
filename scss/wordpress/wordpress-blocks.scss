@@ -30,6 +30,14 @@ p+.wp-block-buttons {
   margin-block-start: 1.5rem;
 }
 
+.wp-block-buttons {
+  &.is-content-justification-stretch {
+    .wp-block-button__link.wp-element-button {
+      width: 100%;
+    }
+  }
+}
+
 // Columns
 // core/columns
 .wp-block-patter-block-wrapper-000 {
@@ -98,7 +106,7 @@ p+.wp-block-buttons {
   overflow: hidden;
 
   img {
-    border-radius: var(--wp--custom--rounded-border-radius, 10px) !important;
+    border-radius: var(--wp--custom--rounded-border-radius, 10px);
     overflow: hidden;
   }
 }

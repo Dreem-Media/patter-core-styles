@@ -78,3 +78,8 @@
 .theme-browser .theme .theme-name {
   box-sizing: unset;
 }
+
+// Fix for block editor title
+.block-editor-block-list__block.editor-post-title {
+  margin-bottom: 1.5rem;
+}
