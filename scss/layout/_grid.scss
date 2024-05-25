@@ -83,6 +83,16 @@
   .full_width {
     grid-column: span 1; // Default for single column
   }
+
+  // Twelve column grid
+  &--grid-12 {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+
+    .full_width {
+      grid-column: span 12 !important;
+    }
+  }
+
 }
 
 
