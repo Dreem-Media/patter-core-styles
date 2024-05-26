@@ -88,9 +88,58 @@
   &--grid-12 {
     grid-template-columns: repeat(12, minmax(0, 1fr));
 
+    @include media("<phone") {
+      grid-template-columns: repeat(1, minmax(0, 1fr)); // Single column on mobile
+    }
+
     .full_width {
       grid-column: span 12 !important;
+
+      @include media("<phone") {
+        grid-column: span 1 !important; // Single column on mobile
+      }
     }
+
+    .three_fourths {
+      grid-column: span 9;
+
+      @include media("<phone") {
+        grid-column: span 1;
+      }
+    }
+
+    .two_thirds {
+      grid-column: span 8;
+
+      @include media("<phone") {
+        grid-column: span 1;
+      }
+    }
+
+    .one_half {
+      grid-column: span 6;
+
+      @include media("<phone") {
+        grid-column: span 1;
+      }
+    }
+
+    .one_third {
+      grid-column: span 4;
+
+      @include media("<phone") {
+        grid-column: span 1;
+      }
+    }
+
+    .one_fourth {
+      grid-column: span 3;
+
+      @include media("<phone") {
+        grid-column: span 1;
+      }
+    }
+
   }
 
 }
