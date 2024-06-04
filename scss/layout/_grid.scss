@@ -140,9 +140,49 @@
       }
     }
 
+    .one_sixth {
+      grid-column: span 2;
+
+      @include media("<phone") {
+        grid-column: span 1;
+      }
+    }
   }
 
+  // Ten column grid
+  &--grid-10 {
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+
+    @include media("<phone") {
+      grid-template-columns: repeat(1, minmax(0, 1fr)); // Single column on mobile
+    }
+
+    .full_width {
+      grid-column: span 10 !important;
+
+      @include media("<phone") {
+        grid-column: span 1 !important; // Single column on mobile
+      }
+    }
+
+    .two_fifths {
+      grid-column: span 4;
+
+      @include media("<phone") {
+        grid-column: span 1;
+      }
+    }
+
+    .one_fifth {
+      grid-column: span 2;
+
+      @include media("<phone") {
+        grid-column: span 1;
+      }
+    }
+  }
 }
+
 
 
 //==================
