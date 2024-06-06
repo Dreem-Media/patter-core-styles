@@ -7,6 +7,12 @@
 // Image
 .wp-block-image {
   margin-bottom: 0;
+
+  &.is-style-rounded {
+    img {
+      border-radius: var(--wp--custom--rounded-border-radius, 10px) !important;
+    }
+  }
 }
 
 p+.wp-block-image {
