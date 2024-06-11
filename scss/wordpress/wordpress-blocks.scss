@@ -13,6 +13,11 @@
       border-radius: var(--wp--custom--rounded-border-radius, 10px) !important;
     }
   }
+
+  &.aligncenter {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 p+.wp-block-image {
