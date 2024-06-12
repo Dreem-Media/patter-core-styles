@@ -43,3 +43,11 @@ Add the following line into you main admin import
 `import '@patter/patter-core-styles/js/admin.js';`
 
 ## Navigation Styles
+
+## Migration v1.1.x/1.2.x > v.1.3.0
+
+`import '@patter/patter-core-styles/js/admin';` becomes `import '@patter/patter-core-styles/js/block-editor';`
+
+`import { X } from "@patter/patter-core-styles/js/public/_utils";` becomes `import { DOMReady } from "@patter/patter-core-styles/js-utils";`
+
+`@use '@patter/patter-core-styles/scss/abstracts' as *;` becomes `@use '@patter/patter-core-styles/scss/breakpoints' as *;`
