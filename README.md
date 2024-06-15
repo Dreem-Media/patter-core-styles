@@ -44,7 +44,7 @@ Add the following line into you main admin import
 
 ## Navigation Styles
 
-## Migration v1.1.x/1.2.x > v.1.3.0
+## Migration v1.1.x/1.2.x > v.1.3.x
 
 `import '@patter/patter-core-styles/js/admin';` becomes `import '@patter/patter-core-styles/js/block-editor';`
 

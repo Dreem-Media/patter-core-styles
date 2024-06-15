@@ -30,3 +30,15 @@ export function DomElementReady(selector, callback, timeout = 10000) {
     observer.disconnect();
   }, timeout);
 }
+
+export function patter_debounce(func, wait) {
+  let timeout;
+  return function (...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}

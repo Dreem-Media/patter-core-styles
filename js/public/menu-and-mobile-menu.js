@@ -1,4 +1,4 @@
-import { DOMReady } from "./_utils";
+import { DOMReady, patter_debounce } from "./_utils";
 
 DOMReady(() => {
   const burger = document.getElementById("burger"),
@@ -135,26 +135,28 @@ DOMReady(() => {
 DOMReady(() => {
   function setOverlayTopHeight() {
     let totalHeight = 0;
-    const elements = [
+    const selectors = [
       ".widget-area--site-wide-banner",
       "header.header",
       ".header__main_nav__mobile",
     ];
 
-    elements.forEach((selector) => {
+    selectors.forEach((selector) => {
       const element = document.querySelector(selector);
       if (element) {
         totalHeight += element.offsetHeight;
       }
     });
 
-    document.documentElement.style.setProperty(
-      "--patter--m-nav--overlay-top",
-      `${totalHeight}px`
-    );
+    // Check for the WordPress admin bar
+    const adminBar = document.getElementById('wpadminbar');
+    if (adminBar) {
+      totalHeight += adminBar.offsetHeight;
+    }
+
+    document.documentElement.style.setProperty("--patter--m-nav--overlay-top", `${totalHeight}px`);
   }
 
-  // Run the function on page load and whenever the layout might change
-  window.onload = setOverlayTopHeight;
-  window.onresize = setOverlayTopHeight;
+  setOverlayTopHeight();
+  window.addEventListener('resize', patter_debounce(setOverlayTopHeight, 100));
 });

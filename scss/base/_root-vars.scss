@@ -1,4 +1,9 @@
 :root {
   --wp--custom--color--border: #949494;
   --wp--custom--color--error: #c02b0a;
+  --patter--m-nav--overlay-top: 98px;
+}
+
+body.admin-bar {
+  --patter--m-nav--overlay-top: 130px;
 }

@@ -50,10 +50,4 @@
     }
   }
 
-  &.admin-bar {
-    .m-nav {
-      top: calc(var(--patter--m-nav--overlay-top, 102px) + 46px);
-    }
-  }
-
 }
