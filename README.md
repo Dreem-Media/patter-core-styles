@@ -51,3 +51,5 @@ Add the following line into you main admin import
 `import { X } from "@patter/patter-core-styles/js/public/_utils";` becomes `import { DOMReady } from "@patter/patter-core-styles/js-utils";`
 
 `@use '@patter/patter-core-styles/scss/abstracts' as *;` becomes `@use '@patter/patter-core-styles/scss/breakpoints' as *;`
+
+`.scrolled` becomes `.scrolled-past-header`, `.scrolled` is now added as soon as the user has scrolled
