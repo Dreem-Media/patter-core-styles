@@ -1,4 +1,4 @@
-import { DOMReady, patter_debounce } from "./_utils";
+import { DOMReady } from "./_utils";
 
 DOMReady(() => {
   const burger = document.getElementById("burger"),
@@ -130,33 +130,4 @@ DOMReady(() => {
       subMenu.insertBefore(goBackButtonWrap, subMenu.firstChild);
     });
   }
-});
-
-DOMReady(() => {
-  function setOverlayTopHeight() {
-    let totalHeight = 0;
-    const selectors = [
-      ".widget-area--site-wide-banner",
-      "header.header",
-      ".header__main_nav__mobile",
-    ];
-
-    selectors.forEach((selector) => {
-      const element = document.querySelector(selector);
-      if (element) {
-        totalHeight += element.offsetHeight;
-      }
-    });
-
-    // Check for the WordPress admin bar
-    const adminBar = document.getElementById('wpadminbar');
-    if (adminBar) {
-      totalHeight += adminBar.offsetHeight;
-    }
-
-    document.documentElement.style.setProperty("--patter--m-nav--overlay-top", `${totalHeight}px`);
-  }
-
-  setOverlayTopHeight();
-  window.addEventListener('resize', patter_debounce(setOverlayTopHeight, 100));
 });

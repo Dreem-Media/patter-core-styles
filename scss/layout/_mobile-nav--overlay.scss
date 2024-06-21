@@ -9,7 +9,7 @@
     height: auto;
     left: 0px;
     position: fixed;
-    top: var(--patter--m-nav--overlay-top, 102px); // Change per site
+    top: var(--patter--header-area-size, 98px); // Overwrite per site
     width: 100%;
     visibility: hidden;
     background-color: white;

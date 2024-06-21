@@ -19,7 +19,7 @@ body {
   box-sizing: inherit;
 }
 
-figure:not(.wp-block-image),
+figure:where(:not(.wp-block-image, .wp-block-gallery)),
 fieldset,
 legend,
 pre,
