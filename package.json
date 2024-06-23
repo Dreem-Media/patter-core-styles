@@ -34,6 +34,7 @@
     "./scss/main": "./scss/main.scss",
     "./scss/wordpress-public": "./scss/wordpress-public.scss",
     "./scss/wordpress-admin": "./scss/wordpress-admin.scss",
+    "./scss/wordpress-block-editor": "./scss/wordpress-block-editor.scss",
     "./scss/aos-animations": "./scss/aos-animations.scss"
   },
   "dependencies": {

@@ -1,11 +1,39 @@
 // Admin Editor CSS 
 
 @forward "wordpress/admin-patter-options-page";
-@forward "wordpress/admin-block-editor";
+// @forward "wordpress/admin-block-editor";
 
 // Admin CSS
-@forward 'wordpress/background-images';
-@forward 'wordpress/buttons';
-@forward 'wordpress/general-elements';
-@forward 'wordpress/pagination';
-@forward 'wordpress/wordpress-blocks';
+// Block editor gets styles via the block assets
+// @forward 'wordpress/background-images';
+// @forward 'wordpress/buttons';
+// @forward 'wordpress/general-elements';
+// @forward 'wordpress/pagination';
+// @forward 'wordpress/wordpress-blocks';
+
+
+// Dashboard Widget
+#patter_dashboard_widget_intro {
+  .postbox-header {
+    background-color: #e51c3a;
+
+    * {
+      color: white;
+    }
+  }
+
+  h3 {
+    font-weight: bold;
+  }
+
+  h4 {
+    text-decoration: underline;
+  }
+}
+
+
+// Random bug with theme page buttons not displaying correctly
+.theme-id-container,
+.theme-browser .theme .theme-name {
+  box-sizing: unset;
+}

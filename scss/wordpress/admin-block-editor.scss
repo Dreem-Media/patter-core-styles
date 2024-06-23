@@ -13,25 +13,6 @@
   }
 }
 
-// Dashboard Widget
-#patter_dashboard_widget_intro {
-  .postbox-header {
-    background-color: #e51c3a;
-
-    * {
-      color: white;
-    }
-  }
-
-  h3 {
-    font-weight: bold;
-  }
-
-  h4 {
-    text-decoration: underline;
-  }
-}
-
 // Admin scss
 // Waiting for this to be fixed, https://github.com/WordPress/gutenberg/pull/41768
 // + for experimental number control
@@ -71,12 +52,6 @@
   .h3 {
     font-size: var(--wp--custom--typography--font-size--heading-3);
   }
-}
-
-// Random bug with theme page buttons not displaying correctly
-.theme-id-container,
-.theme-browser .theme .theme-name {
-  box-sizing: unset;
 }
 
 // Fix for block editor title
