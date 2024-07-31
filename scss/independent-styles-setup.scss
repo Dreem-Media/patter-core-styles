@@ -8,6 +8,10 @@ $light-color: #FBFBFB !default;
 $dark-color: #232323 !default;
 
 :root {
+
+  --wp--preset--color--white: #fff;
+  --wp--preset--color--black: #000;
+
   --wp--preset--color--primary: #{$primary-color};
   --wp--preset--color--secondary: #{$secondary-color};
   --wp--preset--color--light: #{$light-color};
@@ -28,6 +32,12 @@ $dark-color: #232323 !default;
 
 .has-dark-background-color {
   background-color: var(--wp--preset--color--dark) !important;
+}
+
+// Fonts
+:root {
+  --wp--preset--font-size--small: 0.813rem;
+  --wp--preset--font-size--medium: 1rem;
 }
 
 // Spacing and Layout
@@ -60,4 +70,24 @@ $root-padding: 16px !default;
 
 .is-layout-constrained>.alignwide {
   max-width: var(--wp--style--global--wide-size);
+}
+
+.is-layout-flex {
+  display: flex;
+
+  > :is(*, div) {
+    margin: 0;
+  }
+}
+
+.items-justified-center {
+  justify-content: center;
+}
+
+.items-justified-right {
+  justify-content: flex-end;
+}
+
+.items-justified-space-between {
+  justify-content: space-between;
 }

@@ -1,6 +1,6 @@
 {
   "name": "@patter/patter-core-styles",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "Core Patter SCSS UI Kit",
   "main": "scss/main.scss",
   "scripts": {
@@ -35,7 +35,8 @@
     "./scss/wordpress-public": "./scss/wordpress-public.scss",
     "./scss/wordpress-admin": "./scss/wordpress-admin.scss",
     "./scss/wordpress-block-editor": "./scss/wordpress-block-editor.scss",
-    "./scss/aos-animations": "./scss/aos-animations.scss"
+    "./scss/aos-animations": "./scss/aos-animations.scss",
+    "./scss/independent-styles-setup": "./scss/independent-styles-setup.scss"
   },
   "dependencies": {
     "aos": "^2.3.4"
