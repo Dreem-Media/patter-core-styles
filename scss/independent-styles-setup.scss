@@ -74,6 +74,8 @@ $root-padding: 16px !default;
 
 .is-layout-flex {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 
   > :is(*, div) {
     margin: 0;
