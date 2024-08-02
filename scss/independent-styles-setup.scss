@@ -93,3 +93,13 @@ $root-padding: 16px !default;
 .items-justified-space-between {
   justify-content: space-between;
 }
+
+// Buttons
+// Most of these styles were controlled by wordpress
+.wp-block-button__link {
+  text-decoration: none;
+  background-color: var(--wp--preset--color--primary);
+  border-radius: calc(var(--wp--custom--default-border-radius) / 2);
+  color: var(--wp--custom--color--primary-text, currentColor);
+  font-size: var(--wp--preset--font-size--medium);
+}
