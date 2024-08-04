@@ -97,6 +97,10 @@ $root-padding: 16px !default;
 // Buttons
 // Most of these styles were controlled by wordpress
 .wp-block-button__link {
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  word-break: break-word;
   text-decoration: none;
   background-color: var(--wp--preset--color--primary);
   border-radius: calc(var(--wp--custom--default-border-radius) / 2);
