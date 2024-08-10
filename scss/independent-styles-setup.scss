@@ -94,6 +94,10 @@ $root-padding: 16px !default;
   justify-content: space-between;
 }
 
+.has-text-align-center {
+  text-align: center;
+}
+
 // Buttons
 // Most of these styles were controlled by wordpress
 .wp-block-button__link {
