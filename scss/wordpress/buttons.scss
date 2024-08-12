@@ -69,6 +69,22 @@
     }
   }
 
+  // Icon button style
+  .is-style-icon-button & {
+    background: none;
+    border: none;
+    padding: 0.25rem !important;
+    color: inherit;
+    transition: color 0.2s ease-in-out;
+
+    &:focus,
+    &:hover {
+      background: none;
+      border: none;
+      color: var(--wp--custom--color--primary-hover);
+    }
+  }
+
   // Smaller button size, added via "Patter Gutenberg blocks" plugin
   .is-style-smaller-element & {
     padding: calc(var(--wp--custom--content--button-input-padding-y) * 0.8) calc(var(--wp--custom--content--button-input-padding-x) * 0.75) !important;
