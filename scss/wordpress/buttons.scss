@@ -56,6 +56,19 @@
     }
   }
 
+  // Error button
+  .is-style-error-button & {
+    background-color: var(--wp--custom--color--error) !important;
+    color: var(--wp--custom--color--primary-text) !important;
+    border-color: var(--wp--custom--color--error) !important;
+
+    &:focus,
+    &:hover {
+      border-color: var(--wp--custom--color--primary-hover) !important;
+      background-color: var(--wp--custom--color--primary-hover) !important;
+    }
+  }
+
   // Smaller button size, added via "Patter Gutenberg blocks" plugin
   .is-style-smaller-element & {
     padding: calc(var(--wp--custom--content--button-input-padding-y) * 0.85) calc(var(--wp--custom--content--button-input-padding-x) * 0.8) !important;

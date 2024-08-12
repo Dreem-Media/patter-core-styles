@@ -3,6 +3,7 @@ import { registerBlockStyle } from "@wordpress/blocks";
 // Theme Buttons via Native Wordpress buttons
 registerBlockStyle("core/button", { name: "dark-button", label: "Dark" });
 registerBlockStyle("core/button", { name: "white-button", label: "White" });
+registerBlockStyle("core/button", { name: "error-button", label: "White" });
 // registerBlockStyle('core/button', { name: 'large-button', label: 'Large button' });
 
 // Heading / paragraph "larger" styles
