@@ -36,8 +36,13 @@ $dark-color: #232323 !default;
 
 // Fonts
 :root {
+  --wp--custom--typography--font-size--heading-1: 2.25rem;
+  --wp--custom--typography--font-size--heading-2: 2rem;
+  --wp--custom--typography--font-size--heading-3: 1.5rem;
+
   --wp--preset--font-size--small: 0.813rem;
   --wp--preset--font-size--medium: 1rem;
+  --wp--preset--font-size--large: 1.25rem;
 }
 
 // Spacing and Layout
