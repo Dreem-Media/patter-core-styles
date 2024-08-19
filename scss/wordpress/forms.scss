@@ -38,7 +38,7 @@ form:where(:not(.wc-block-components-form)) {
     }
   }
 
-  input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="file"]),
+  input:where(:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="file"])),
   textarea,
   select {
     appearance: none;
@@ -54,6 +54,12 @@ form:where(:not(.wc-block-components-form)) {
     border-radius: calc(var(--wp--custom--default-border-radius)/2);
     transition: border-color 0.3s, color 0.3s, background-color 0.3s;
     transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    vertical-align: middle;
+  }
+
+  input[type="date"] {
+    padding-top: calc(var(--wp--custom--content--button-input-padding-y, 12px) - 1px);
+    padding-bottom: calc(var(--wp--custom--content--button-input-padding-y, 12px) - 1px);
   }
 
   input:where(:not([type="button"], [type="checkbox"], [type="file"], [type="image"], [type="radio"], [type="reset"], [type="submit"])),
@@ -181,6 +187,10 @@ form:where(:not(.wc-block-components-form)) {
 
     &.gform_hidden {
       display: none;
+    }
+
+    &--input-wrapper {
+      position: relative;
     }
 
     &--width-one-sixth {
