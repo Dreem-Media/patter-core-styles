@@ -151,8 +151,11 @@ form:where(:not(.wc-block-components-form)) {
   --gf-field-gap-x: 12px;
   --gf-field-gap-y: 12px;
 
-  container: gFormContainer / inline-size;
   width: 100%;
+
+  &--is-container {
+    container: gFormContainer / inline-size;
+  }
 
   .gform_title {
     text-align: left;
