@@ -184,6 +184,7 @@ form:where(:not(.wc-block-components-form)) {
     margin-bottom: var(--gf-field-gap-y);
     grid-column: 1 #{"/"} -1;
     min-width: 0;
+    position: relative;
 
     &.gform_hidden {
       display: none;
@@ -395,6 +396,65 @@ form:where(:not(.wc-block-components-form)) {
     font-weight: 500;
     margin: 6px 0;
   }
+}
+
+// Inline labels 
+.input-fieldset {
+  position: absolute;
+  inset: -4px 0px 0px;
+  padding: 0px 8px !important;
+  pointer-events: none;
+  border-radius: calc(var(--wp--custom--default-border-radius) / 2);
+  border: 1px solid var(--wp--custom--color--border) !important;
+  overflow: hidden;
+  min-width: 0%;
+
+  .input-legend {
+    height: 11px;
+    width: auto;
+    padding: 0 8px;
+    font-size: 0.875rem !important;
+
+    span {
+      padding-left: 4px;
+      display: inline-block;
+      opacity: 0;
+      visibility: visible;
+    }
+  }
+}
+
+
+.gfield--input-wrapper--label-inline {
+
+  input {
+    border-color: transparent;
+    outline: 0;
+  }
+
+  &:focus-within {
+    fieldset {
+      border-color: var(--wp--preset--color--primary) !important;
+    }
+  }
+
+}
+
+label.gfield--input-wrapper--label-inline {
+  display: block;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  position: absolute;
+  left: 0px;
+  font-size: 0.875rem !important;
+  top: 0px;
+  z-index: 1;
+  pointer-events: auto;
+  user-select: none;
+  transform: translate(var(--wp--custom--content--button-input-padding-x, 16px), -9px);
+  padding: 0px;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 

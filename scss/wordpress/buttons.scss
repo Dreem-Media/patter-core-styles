@@ -87,7 +87,8 @@
 
   // Smaller button size, added via "Patter Gutenberg blocks" plugin
   .is-style-smaller-element & {
-    padding: calc(var(--wp--custom--content--button-input-padding-y) * 0.8) calc(var(--wp--custom--content--button-input-padding-x) * 0.75) !important;
+    padding: calc(var(--wp--custom--content--button-input-padding-y) * 0.5) calc(var(--wp--custom--content--button-input-padding-x) * 0.6) !important;
+    font-size: calc(var(--wp--preset--font-size--medium) * 0.875);
   }
 
   &:disabled,
