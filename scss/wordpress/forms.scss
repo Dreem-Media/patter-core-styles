@@ -181,7 +181,7 @@ form:where(:not(.wc-block-components-form)) {
   }
 
   .gfield {
-    margin-bottom: var(--gf-field-gap-y);
+    margin-bottom: calc(var(--gf-field-gap-y) + 0.5rem); // space for validation message
     grid-column: 1 #{"/"} -1;
     min-width: 0;
     position: relative;
@@ -192,6 +192,10 @@ form:where(:not(.wc-block-components-form)) {
 
     &--input-wrapper {
       position: relative;
+    }
+
+    &--label-inline {
+      margin-bottom: calc(var(--gf-field-gap-y) + 0.875rem);
     }
 
     &--width-one-sixth {
@@ -334,6 +338,17 @@ form:where(:not(.wc-block-components-form)) {
     input {
       border-color: var(--wp--custom--color--error) !important;
     }
+
+    // inline labels
+    .gfield--input-wrapper--label-inline {
+      input {
+        border-color: transparent !important;
+      }
+
+      fieldset {
+        border-color: var(--wp--custom--color--error) !important;
+      }
+    }
   }
 
   .validation_message,
@@ -343,7 +358,7 @@ form:where(:not(.wc-block-components-form)) {
   }
 
   .validation_message {
-    position: relative;
+    position: absolute;
     color: var(--wp--custom--color--error);
   }
 
