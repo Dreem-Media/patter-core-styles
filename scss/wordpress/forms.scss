@@ -194,8 +194,10 @@ form:where(:not(.wc-block-components-form)) {
       position: relative;
     }
 
+
     &--label-inline {
-      margin-bottom: calc(var(--gf-field-gap-y) + 0.875rem);
+      margin-top: 0.25rem; // Spacing for the inline label
+      margin-bottom: calc(var(--gf-field-gap-y) + 0.625rem);
     }
 
     &--width-one-sixth {
@@ -360,6 +362,7 @@ form:where(:not(.wc-block-components-form)) {
   .validation_message {
     position: absolute;
     color: var(--wp--custom--color--error);
+    margin-top: 1px;
   }
 
   .gform_validation_errors {
@@ -442,7 +445,8 @@ form:where(:not(.wc-block-components-form)) {
 
 .gfield--input-wrapper--label-inline {
 
-  input {
+  input,
+  textarea {
     border-color: transparent;
     outline: 0;
   }

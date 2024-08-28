@@ -117,6 +117,11 @@ $root-padding: 16px !default;
   font-size: var(--wp--preset--font-size--medium);
   border: 2px solid var(--wp--preset--color--primary);
 
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
   .is-style-outline & {
     background-color: transparent;
     border-color: var(--wp--preset--color--primary);
