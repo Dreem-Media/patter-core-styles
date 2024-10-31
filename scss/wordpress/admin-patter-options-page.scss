@@ -1,7 +1,8 @@
 @use "../abstracts" as *;
+@forward "../layout/container";
+@forward "../layout/content_section_spacing";
 
 // Patter Options page
-
 .settings_page_patter-content-options-page {
 
   #wpcontent {
