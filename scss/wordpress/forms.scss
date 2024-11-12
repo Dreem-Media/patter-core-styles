@@ -190,6 +190,12 @@ form:where(:not(.wc-block-components-form)) {
       display: none;
     }
 
+    &.gfield_visibility_hidden {
+      inset-inline-start: -9999px;
+      position: absolute;
+      visibility: hidden;
+    }
+
     &--input-wrapper {
       position: relative;
     }
