@@ -1,3 +1,101 @@
 //============
 // Header
 //============
+
+// =============================================
+// Header Scroll State Variables
+// =============================================
+// These CSS custom properties allow themes to easily
+// customize the header appearance in different states
+
+:root {
+  // Default header state (at top of page)
+  --header-bg: transparent;
+  --header-text-color: inherit;
+  --header-padding-y: 1.5rem;
+  --header-shadow: none;
+  --header-backdrop-blur: 0;
+
+  // Scrolled header state
+  --header-scrolled-bg: rgba(255, 255, 255, 0.95);
+  --header-scrolled-text-color: var(--wp--preset--color--dark, #1e293b);
+  --header-scrolled-padding-y: 1rem;
+  --header-scrolled-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  --header-scrolled-backdrop-blur: 12px;
+
+  // Header on dark backgrounds (hero sections)
+  --header-dark-text-color: #fff;
+  --header-dark-link-hover: var(--wp--preset--color--primary, #dc2f2e);
+}
+
+// =============================================
+// Header Scroll States
+// =============================================
+// Classes added via body-scroll.js
+
+.header {
+
+  // =============================================
+  // Scrolled State
+  // =============================================
+  // Applied via JS when user scrolls past threshold (50px)
+  &--scrolled {
+    position: sticky;
+    top: 0;
+    background: var(--header-scrolled-bg);
+    box-shadow: var(--header-scrolled-shadow);
+    backdrop-filter: blur(var(--header-scrolled-backdrop-blur));
+    -webkit-backdrop-filter: blur(var(--header-scrolled-backdrop-blur));
+    transition:
+      background-color 0.3s ease,
+      box-shadow 0.3s ease;
+
+    // Ensure text is readable on light bg
+    color: var(--header-scrolled-text-color);
+
+    .menu a {
+      color: var(--header-scrolled-text-color);
+    }
+  }
+
+  // =============================================
+  // Dark Mode (for transparent header on dark hero)
+  // =============================================
+  // Add .header--dark class when header is over dark content
+  &--dark:not(&--scrolled) {
+    color: var(--header-dark-text-color);
+
+    .menu a {
+      color: var(--header-dark-text-color);
+
+      &:hover,
+      &:focus {
+        color: var(--header-dark-link-hover);
+      }
+    }
+
+    .burger,
+    .burger::before,
+    .burger::after {
+      background-color: var(--header-dark-text-color);
+    }
+
+    .burger-text {
+      color: var(--header-dark-text-color);
+    }
+
+    // Logo filter for dark backgrounds (invert to white)
+    .logo--wrapper img {
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  // =============================================
+  // Sticky Header Variant
+  // =============================================
+  // Use .header--sticky for always-sticky header
+  &--sticky {
+    position: sticky;
+    top: 0;
+  }
+}

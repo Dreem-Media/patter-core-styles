@@ -1,0 +1,215 @@
+@use "../abstracts" as *;
+
+// =============================================
+// Mobile Navigation: Fullscreen Style
+// =============================================
+// A full-screen overlay mobile nav that slides down from the top
+// Inspired by modern web design patterns
+// Usage: Add class 'm-nav-style--fullscreen' to body
+
+// CSS Variables for easy customization in child themes
+:root {
+  --m-nav-fullscreen-bg: var(--wp--preset--color--dark, #0f172a);
+  --m-nav-fullscreen-text: #fff;
+  --m-nav-fullscreen-link-hover: var(--wp--preset--color--primary, #dc2f2e);
+  --m-nav-fullscreen-transition-duration: 0.5s;
+  --m-nav-fullscreen-transition-easing: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.m-nav-style--fullscreen {
+
+  // The mobile nav container - full screen overlay
+  .m-nav {
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    background: var(--m-nav-fullscreen-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+
+    // Initial hidden state - slide up and out
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      transform var(--m-nav-fullscreen-transition-duration) var(--m-nav-fullscreen-transition-easing),
+      opacity var(--m-nav-fullscreen-transition-duration) var(--m-nav-fullscreen-transition-easing),
+      visibility 0s var(--m-nav-fullscreen-transition-duration);
+
+    @include media(">=tablet") {
+      display: none;
+    }
+
+    // Active state - slide in from top
+    &.is-open {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+      transition:
+        transform var(--m-nav-fullscreen-transition-duration) var(--m-nav-fullscreen-transition-easing),
+        opacity var(--m-nav-fullscreen-transition-duration) var(--m-nav-fullscreen-transition-easing),
+        visibility 0s 0s;
+    }
+
+    // Close button positioning (added via JS)
+    .m-nav__close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 10;
+
+      // X icon using pseudo elements
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        width: 24px;
+        height: 2px;
+        background: var(--m-nav-fullscreen-text);
+        transition: background-color 0.2s ease;
+      }
+
+      &::before {
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+      }
+
+      &:hover::before,
+      &:hover::after {
+        background: var(--m-nav-fullscreen-link-hover);
+      }
+
+      // Screen reader text
+      .screen-reader-text {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+    }
+
+    // Menu styling within fullscreen nav
+    .menu {
+      flex-direction: column;
+      gap: 0;
+      text-align: center;
+
+      >ul {
+        flex-direction: column;
+        gap: 0;
+      }
+
+      li {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.4s ease,
+          transform 0.4s ease;
+
+        // Stagger animation for menu items
+        @for $i from 1 through 10 {
+          &:nth-child(#{$i}) {
+            transition-delay: #{0.1s + ($i * 0.05s)};
+          }
+        }
+      }
+
+      a {
+        display: block;
+        font-size: clamp(1.5rem, 5vw, 2.5rem);
+        font-weight: 700;
+        color: var(--m-nav-fullscreen-text);
+        padding: 0.75rem 1rem;
+        text-decoration: none;
+        transition: color 0.2s ease, transform 0.2s ease;
+
+        // Remove default underline animation for fullscreen nav
+        &::before,
+        &::after {
+          display: none;
+        }
+
+        &:hover,
+        &:focus {
+          color: var(--m-nav-fullscreen-link-hover);
+          transform: translateX(8px);
+        }
+      }
+    }
+
+    // When nav is active, animate menu items in
+    &.is-open .menu li {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    // Submenu styling
+    .sub-menu-wrap {
+      overflow: hidden;
+      transition: 0.3s all;
+      height: 0;
+
+      .sub-menu {
+        padding-left: 1rem;
+
+        a {
+          font-size: clamp(1rem, 3vw, 1.5rem);
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  // Burger button transforms to X when active
+  &.m-nav-is-open {
+    // Prevent body scroll when nav is open
+    overflow: hidden;
+
+    .open-main-nav {
+      z-index: 100;
+      position: fixed;
+      top: 1.5rem;
+      right: var(--wp--style--root--padding-right, 1.5rem);
+
+      .burger {
+        background: transparent;
+
+        &::before {
+          transform: rotate(45deg) translateY(0);
+          top: 8px;
+          background: var(--m-nav-fullscreen-text);
+        }
+
+        &::after {
+          transform: rotate(-45deg) translateY(0);
+          bottom: 8px;
+          background: var(--m-nav-fullscreen-text);
+        }
+      }
+
+      .burger-text {
+        color: var(--m-nav-fullscreen-text);
+      }
+    }
+  }
+}

@@ -11,11 +11,16 @@ import { DOMReady, patter_debounce } from "./_utils";
 DOMReady(() => {
   const scrolledClassName = 'scrolled-past-header';
   const scrolledInitClassName = 'scrolled';
+  const headerScrolledClassName = 'header--scrolled';
   const bodyTag = document.body ?? document.getElementsByTagName('body')[0];
+  const headerTag = document.querySelector('.header');
 
   let lastScrollY = 0;
   let ticking = false;
   let overlayTopValue = 100;
+
+  // Threshold for header--scrolled class (can be overridden via CSS custom property)
+  const HEADER_SCROLL_THRESHOLD = 50;
 
   const selectors = [".widget-area--site-wide-banner", "header.header", ".header__main_nav__mobile"];
   const elements = selectors.map(selector => document.querySelector(selector));
@@ -65,6 +70,21 @@ DOMReady(() => {
       bodyTag.classList.remove(scrolledClassName);
     }
 
+    // Header scroll state - adds header--scrolled class for transparent-to-solid header effect
+    if (headerTag) {
+      const shouldBeScrolled = lastScrollY > HEADER_SCROLL_THRESHOLD;
+      const isCurrentlyScrolled = headerTag.classList.contains(headerScrolledClassName);
+
+      if (shouldBeScrolled !== isCurrentlyScrolled) {
+        headerTag.classList.toggle(headerScrolledClassName, shouldBeScrolled);
+
+        // Dispatch custom event for themes to hook into
+        window.dispatchEvent(new CustomEvent('headerScrollStateChange', {
+          detail: { scrolled: shouldBeScrolled, scrollY: lastScrollY }
+        }));
+      }
+    }
+
     // // Set a "scrolled amount"
     // const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     // const ratio = (lastScrollY / scrollHeight) * 5;
@@ -78,4 +98,5 @@ DOMReady(() => {
   window.addEventListener('resize', patter_debounce(setOverlayTopHeight, 100));
 
   setOverlayTopHeight(); // Initial calculation on DOM ready
+  update(); // Check initial scroll position (for page refresh mid-scroll)
 });
