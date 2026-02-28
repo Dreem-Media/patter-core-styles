@@ -308,7 +308,7 @@ $im-no-media-expressions: (
 /// @return {String} - `min` or `max`
 ///
 @function get-expression-prefix($operator) {
-  @return if(list.index(('<', '<=', '≤'), $operator), 'max', 'min');
+  @return if(sass(list.index(("<", "<=", "≤"), $operator)): "max"; else: "min");
 }
 
 ///
@@ -454,7 +454,11 @@ $numbers: (
   $character: string.slice($value, $i, $i);
 
   @if not(list.index(map.keys($numbers), $character) or $character =='.') {
-    @return to-length(if($minus, -$result, $result), string.slice($value, $i));
+    @if $minus {
+      @return to-length(-$result, string.slice($value, $i));
+    }
+
+    @return to-length($result, string.slice($value, $i));
   }
 
   @if $character =='.' {
@@ -471,7 +475,11 @@ $numbers: (
   }
 }
 
-@return if($minus, -$result, $result);
+@if $minus {
+  @return -$result;
+}
+
+@return $result;
 }
 
 ///
